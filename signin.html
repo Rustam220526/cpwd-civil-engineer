@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character Encoding -->
+    <meta charset="utf-8" />
+
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Page Title -->
+    <title>Sign In | Er. Rustam Ali</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- ==================================================
+         SIGN IN CONTAINER
+    =================================================== -->
+
+    <main
+      style="
+        max-width: 480px;
+        margin: 10vh auto;
+        background: #fff;
+        border: 1px solid #cce3f7;
+        border-radius: 10px;
+        padding: 35px;
+      "
+    >
+      <!-- Back to Home -->
+      <a href="index.html" style="color: #0758f6"> ← Back to home </a>
+
+      <!-- Page Heading -->
+      <h1 style="font-family: Georgia, serif">Create your account</h1>
+
+      <!-- Description -->
+      <p>Join the CPWD Engineering Resource platform.</p>
+
+      <!-- ==================================================
+             SIGN IN FORM
+        =================================================== -->
+
+      <form
+        onsubmit="
+          event.preventDefault();
+          this.querySelector('button').textContent = 'Account details saved ✓';
+        "
+      >
+        <!-- Full Name -->
+        <p>
+          <label for="fullname"> Full name </label>
+
+          <br />
+
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            required
+            autocomplete="name"
+            style="width: 100%; padding: 12px; margin-top: 6px"
+          />
+        </p>
+
+        <!-- Email Address -->
+        <p>
+          <label for="email"> Email address </label>
+
+          <br />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            style="width: 100%; padding: 12px; margin-top: 6px"
+          />
+        </p>
+
+        <!-- Password -->
+        <p>
+          <label for="password"> Password </label>
+
+          <br />
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            minlength="8"
+            required
+            autocomplete="new-password"
+            style="width: 100%; padding: 12px; margin-top: 6px"
+          />
+        </p>
+
+        <!-- Create Account Button -->
+        <button
+          type="submit"
+          style="
+            padding: 13px 20px;
+            background: #0758f6;
+            color: #fff;
+            border: 0;
+            border-radius: 5px;
+            font-weight: bold;
+          "
+        >
+          Create account
+        </button>
+      </form>
+
+      <!-- Login Link -->
+      <p>
+        Already registered?
+
+        <a href="login.html"> Login </a>
+      </p>
+    </main>
+  </body>
+</html>

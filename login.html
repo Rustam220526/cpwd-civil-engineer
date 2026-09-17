@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Login | Er. Rustam Ali</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- ==================================================
+         LOGIN CONTAINER
+    =================================================== -->
+
+    <main
+      style="
+        max-width: 480px;
+        margin: 10vh auto;
+        background: #fff;
+        border: 1px solid #cce3f7;
+        border-radius: 10px;
+        padding: 35px;
+      "
+    >
+      <!-- Back to Home -->
+      <a href="index.html" style="color: #0758f6"> ← Back to home </a>
+
+      <!-- Page Heading -->
+      <h1 style="font-family: Georgia, serif">Welcome back</h1>
+
+      <!-- Description -->
+      <p>Login to access your CPWD resources.</p>
+
+      <!-- ==================================================
+             LOGIN FORM
+        =================================================== -->
+
+      <form
+        onsubmit="
+          event.preventDefault();
+          this.querySelector('button').textContent = 'Login received ✓';
+        "
+      >
+        <!-- Email -->
+        <p>
+          <label for="email"> Email address </label>
+
+          <br />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            style="width: 100%; padding: 12px; margin-top: 6px"
+          />
+        </p>
+
+        <!-- Password -->
+        <p>
+          <label for="password"> Password </label>
+
+          <br />
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            style="width: 100%; padding: 12px; margin-top: 6px"
+          />
+        </p>
+
+        <!-- Login Button -->
+        <button
+          type="submit"
+          style="
+            padding: 13px 20px;
+            background: #0758f6;
+            color: #fff;
+            border: 0;
+            border-radius: 5px;
+            font-weight: bold;
+          "
+        >
+          Login
+        </button>
+      </form>
+
+      <!-- Create Account -->
+      <p>
+        New user?
+        <a href="signin.html"> Create an account </a>
+      </p>
+    </main>
+  </body>
+</html>

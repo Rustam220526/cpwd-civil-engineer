@@ -1,0 +1,780 @@
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+  --b: #0758f6;
+  --n: #041563;
+  --l: #cce3f7;
+  --f: "DM Sans", Arial;
+}
+
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #effaff;
+  color: var(--n);
+  font-family: var(--f);
+}
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.top,
+.mainnav,
+main,
+footer {
+  max-width: 1340px;
+  margin: auto;
+}
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.top {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+/* =========================================================
+   BRAND / LOGO
+========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--n);
+  text-decoration: none;
+
+  font:
+    20px "Yellowtail",
+    cursive;
+}
+
+.brand i {
+  width: 49px;
+  height: 49px;
+
+  border: 2px solid #188266;
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  color: #db3d25;
+  font: 700 18px Arial;
+  font-style: normal;
+}
+
+.brand small {
+  display: block;
+
+  font: 700 7px var(--f);
+  letter-spacing: 0.4px;
+}
+
+/* =========================================================
+   HEADER VALUES & CONTACT
+========================================================= */
+
+.values,
+.contact {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+
+.contact {
+  margin-left: auto;
+  font-size: 11px;
+}
+
+/* =========================================================
+   AUTHENTICATION BUTTONS
+========================================================= */
+
+.auth {
+  display: flex;
+  gap: 12px;
+}
+
+.auth a {
+  padding: 10px 17px;
+
+  border: 1px solid var(--b);
+  border-radius: 5px;
+
+  color: var(--b);
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.auth a + a {
+  background: var(--b);
+  color: #fff;
+}
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+.mainnav {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  border-top: 1px solid var(--l);
+  border-bottom: 1px solid var(--l);
+}
+
+.mainnav a {
+  padding: 12px 17px;
+
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.mainnav .active {
+  background: var(--b);
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.mainnav label {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  height: 39px;
+
+  border: 1px solid var(--l);
+  border-radius: 7px;
+
+  padding: 0 10px;
+}
+
+.mainnav input {
+  border: 0;
+  outline: 0;
+  flex: 1;
+
+  font: 11px var(--f);
+}
+
+.mainnav label b {
+  font-size: 25px;
+  color: var(--b);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+  height: 303px;
+
+  margin-top: 10px;
+
+  border-radius: 8px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(90deg, #ebfbff 0%, #eafaffcc 40%, transparent 68%),
+    url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=88")
+      center / cover;
+}
+
+/* Hero Content */
+
+.hero > div {
+  padding: 27px 48px;
+  width: 540px;
+}
+
+.hero p {
+  margin: 0;
+
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.hero em {
+  color: var(--b);
+  font-style: normal;
+}
+
+.hero h1 {
+  margin: 6px 0 9px;
+
+  font:
+    700 37px / 1.14 "Playfair Display",
+    serif;
+
+  letter-spacing: -1px;
+}
+
+.hero span {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   HERO ACTION BUTTONS
+========================================================= */
+
+.actions {
+  display: flex;
+  gap: 16px;
+
+  margin-top: 14px !important;
+}
+
+.actions button {
+  border: 1px solid var(--b);
+  border-radius: 5px;
+
+  padding: 13px 20px;
+
+  background: var(--b);
+  color: #fff;
+
+  font: 700 13px var(--f);
+}
+
+.actions button + button {
+  background: white;
+  color: var(--b);
+}
+
+/* =========================================================
+   HERO QUOTE
+========================================================= */
+
+.hero > strong {
+  position: absolute;
+
+  right: 65px;
+  bottom: 25px;
+
+  color: white;
+
+  font:
+    30px / 1 "Yellowtail",
+    cursive;
+
+  transform: rotate(-8deg);
+
+  text-align: center;
+
+  text-shadow: 1px 2px #222;
+}
+
+/* Hero Slider Indicators */
+
+.hero aside {
+  position: absolute;
+
+  bottom: 10px;
+  left: 49%;
+
+  color: #fff;
+}
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 9px;
+
+  margin-top: 10px;
+}
+
+.cards article,
+.box,
+.stats {
+  background: #fff;
+
+  border: 1px solid var(--l);
+  border-radius: 7px;
+}
+
+.cards article {
+  display: flex;
+  gap: 18px;
+
+  padding: 15px 18px;
+
+  min-height: 134px;
+}
+
+/* Card Icons */
+
+.cards article > b {
+  font-size: 39px;
+  color: var(--b);
+}
+
+.cards article:nth-child(2) > b {
+  color: #538600;
+}
+
+.cards article:nth-child(3) > b {
+  color: #ff7129;
+}
+
+.cards article:nth-child(4) > b {
+  color: #8540e8;
+}
+
+/* Card Content */
+
+.cards h2 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.cards p {
+  margin: 0 0 8px;
+
+  color: #33457c;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cards a {
+  color: var(--b);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dash {
+  display: grid;
+
+  grid-template-columns: 38% 62%;
+
+  gap: 10px;
+
+  margin-top: 14px;
+}
+
+/* =========================================================
+   BOX HEADER
+========================================================= */
+
+.box header {
+  height: 45px;
+
+  border-bottom: 1px solid var(--l);
+
+  padding: 11px 17px;
+
+  color: var(--b);
+
+  font-size: 18px;
+}
+
+.box header a {
+  float: right;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   MAIN MENU
+========================================================= */
+
+.menu > div {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.menu ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0 17px;
+}
+
+.menu ul + ul {
+  border-left: 1px solid var(--l);
+}
+
+.menu li {
+  height: 44px;
+
+  border-bottom: 1px solid #e2edf5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--n);
+
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.menu li::first-letter {
+  color: var(--b);
+  font-size: 23px;
+}
+
+/* =========================================================
+   LATEST UPDATES
+========================================================= */
+
+.updates > ul {
+  padding: 0 20px;
+  margin: 0;
+
+  list-style: none;
+}
+
+.updates li {
+  height: 31px;
+
+  border-bottom: 1px solid #e2edf5;
+
+  display: grid;
+
+  grid-template-columns:
+    32px
+    168px
+    1fr
+    90px;
+
+  align-items: center;
+
+  color: var(--b);
+
+  font-size: 16px;
+}
+
+.updates li b {
+  color: var(--n);
+  font-size: 12px;
+}
+
+.updates li span {
+  color: #53669c;
+  font-size: 11px;
+}
+
+.updates time {
+  font-size: 11px;
+  text-align: right;
+}
+
+/* =========================================================
+   EXPERIENCE / STATISTICS
+========================================================= */
+
+.stats {
+  margin-top: 14px;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  padding: 15px 8px;
+}
+
+.stats article {
+  padding: 0 12px;
+
+  border-right: 1px solid #b8d8f4;
+
+  color: var(--b);
+
+  font-size: 34px;
+}
+
+.stats article:last-child {
+  border: 0;
+}
+
+.stats b,
+.stats span {
+  display: block;
+
+  margin-left: 40px;
+
+  color: var(--n);
+
+  font-size: 15px;
+
+  white-space: nowrap;
+}
+
+.stats span {
+  color: var(--b);
+  font-size: 9px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  height: 86px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 50px;
+
+  margin-top: 12px;
+
+  border-top: 1px solid var(--l);
+
+  color: var(--b);
+
+  font-size: 13px;
+}
+
+footer span {
+  color: #294280;
+  font-size: 11px;
+}
+
+footer b {
+  margin-left: auto;
+  font-size: 9px;
+}
+
+/* =========================================================
+   MOBILE BOTTOM NAVIGATION
+========================================================= */
+
+.dock {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Screens: 800px and below
+========================================================= */
+
+@media (max-width: 800px) {
+  /* Main Containers */
+
+  .top,
+  main,
+  footer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* Hide Desktop Header Information */
+
+  .values,
+  .contact {
+    display: none;
+  }
+
+  /* Mobile Header */
+
+  .top {
+    height: 95px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  /* Mobile Authentication */
+
+  .auth {
+    position: absolute;
+
+    top: 58px;
+    right: 15px;
+  }
+
+  /* Mobile Navigation */
+
+  .mainnav {
+    overflow: auto;
+    padding: 0 10px;
+  }
+
+  /* =====================================================
+       MOBILE HERO
+    ====================================================== */
+
+  .hero {
+    height: 330px;
+
+    background:
+      linear-gradient(90deg, #eafbff 0%, #eafbffdd 50%, transparent 90%),
+      url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=88")
+        65% / cover;
+  }
+
+  .hero > div {
+    padding: 18px 28px;
+    width: 320px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero span {
+    font-size: 14px;
+  }
+
+  .hero > strong {
+    right: 15px;
+    bottom: 45px;
+
+    font-size: 24px;
+  }
+
+  /* =====================================================
+       MOBILE FEATURE CARDS
+    ====================================================== */
+
+  .cards {
+    overflow: auto;
+
+    grid-template-columns: repeat(4, 174px);
+  }
+
+  .cards article {
+    display: block;
+
+    text-align: center;
+
+    padding: 13px;
+
+    min-height: 185px;
+  }
+
+  .cards article > b {
+    display: block;
+  }
+
+  /* =====================================================
+       MOBILE DASHBOARD
+    ====================================================== */
+
+  .dash {
+    display: block;
+  }
+
+  /* Latest Updates */
+
+  .updates {
+    margin-top: 10px;
+    overflow: auto;
+  }
+
+  .updates > ul {
+    min-width: 530px;
+  }
+
+  /* =====================================================
+       MOBILE STATISTICS
+    ====================================================== */
+
+  .stats {
+    overflow: auto;
+
+    grid-template-columns: repeat(6, 160px);
+  }
+
+  /* =====================================================
+       MOBILE FOOTER
+    ====================================================== */
+
+  footer {
+    height: 60px;
+  }
+
+  /* =====================================================
+       FIXED MOBILE DOCK
+    ====================================================== */
+
+  .dock {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 65px;
+
+    background: #fff;
+
+    display: flex;
+    justify-content: space-around;
+
+    z-index: 9;
+
+    box-shadow: 0 -2px 10px #0002;
+  }
+
+  .dock a {
+    display: grid;
+    place-items: center;
+
+    color: #000;
+
+    font-size: 25px;
+  }
+
+  .dock a:first-child {
+    color: var(--b);
+  }
+
+  .dock small {
+    font-size: 10px;
+  }
+
+  /* Prevent content from hiding behind dock */
+
+  body {
+    padding-bottom: 65px;
+  }
+}
