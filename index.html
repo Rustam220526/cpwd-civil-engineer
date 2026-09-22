@@ -17,8 +17,21 @@
       rel="stylesheet"
     />
 
+    <!-- Font Awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- Custom CSS -->
+    <!-- Favicon and Manifest -->
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
 
   <body>
@@ -30,30 +43,33 @@
       <!-- Top Header -->
       <div class="top">
         <!-- Brand -->
-        <a class="brand" href="#">
-          <i>
-            RA
-            <small>CPWD</small>
-          </i>
+        <a class="brand">
+          <img src="/images/Logo.png" alt="Logo" />
 
           <span>
             Building Knowledge for a Better Tomorrow
 
-            <small>
+            <small
+              style="
+                font-size: 0.6rem;
+                color: #f60d24;
+                font-family: &quot;Playfair Display&quot;, serif;
+              "
+            >
               DISCIPLINE &nbsp;•&nbsp; FOCUS &nbsp;•&nbsp; CONSISTENCY
             </small>
           </span>
         </a>
 
         <!-- Core Values -->
-        <b class="values">
+        <!-- <b class="values">
           ESTIMATE &nbsp;|&nbsp; TENDER &nbsp;|&nbsp; EXECUTE &nbsp;|&nbsp;
           EXCEL
-        </b>
+        </b> -->
 
         <!-- Contact Information -->
-        <div class="contact">
-          ☎ +91 9453536239 &nbsp; ✉ rustam444666@gmail.com
+        <div class="contact" style="font-size: 0.6rem; color: #1206f2">
+          ☎ + 91 9453 5362 39 &nbsp; ✉ rustam444666@gmail.com
         </div>
 
         <!-- Authentication -->
@@ -68,20 +84,114 @@
              MAIN NAVIGATION
         =================================================== -->
 
-      <nav class="mainnav">
-        <a class="active"> ⌂ Home </a>
+      <nav class="mainnav" aria-label="Main navigation">
+        <a class="active" href="#"><i class="fa-solid fa-house"></i> Home</a>
 
-        <a> ▣ DSR </a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true">
+            <i class="fa-solid fa-calculator"></i> DSR
+            <i class="fa-solid fa-chevron-down nav-caret"></i>
+          </button>
+          <div class="submenu">
+            <a href="#dsr-2023"
+              ><i class="fa-solid fa-file-lines"></i> DSR 2023</a
+            >
+            <a href="#dsr-analysis"
+              ><i class="fa-solid fa-chart-column"></i> Rate Analysis</a
+            >
+            <a href="#dsr-updates"
+              ><i class="fa-solid fa-arrows-rotate"></i> DSR Updates</a
+            >
+          </div>
+        </div>
 
-        <a> ▧ PAR </a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true">
+            <i class="fa-solid fa-file-signature"></i> PAR
+            <i class="fa-solid fa-chevron-down nav-caret"></i>
+          </button>
+          <div class="submenu">
+            <a href="#par-forms"
+              ><i class="fa-solid fa-clipboard-list"></i> PAR Forms</a
+            >
+            <a href="#par-guidelines"
+              ><i class="fa-solid fa-compass"></i> Guidelines</a
+            >
+            <a href="#par-templates"
+              ><i class="fa-solid fa-file-pen"></i> Templates</a
+            >
+          </div>
+        </div>
 
-        <a> ▥ MANUAL </a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true">
+            <i class="fa-solid fa-book-open"></i> MANUAL
+            <i class="fa-solid fa-chevron-down nav-caret"></i>
+          </button>
+          <div class="submenu">
+            <a href="#works-manual"
+              ><i class="fa-solid fa-helmet-safety"></i> Works Manual</a
+            >
+            <a href="#maintenance-manual"
+              ><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance</a
+            >
+            <a href="#manual-amendments"
+              ><i class="fa-solid fa-pen-to-square"></i> Amendments</a
+            >
+          </div>
+        </div>
 
-        <a> ▦ SOP </a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true">
+            <i class="fa-solid fa-list-check"></i> SOP
+            <i class="fa-solid fa-chevron-down nav-caret"></i>
+          </button>
+          <div class="submenu">
+            <a href="#sop-tender"
+              ><i class="fa-solid fa-file-contract"></i> Tendering</a
+            >
+            <a href="#sop-quality"
+              ><i class="fa-solid fa-shield-heart"></i> Quality Control</a
+            >
+            <a href="#sop-safety"
+              ><i class="fa-solid fa-vest"></i> Site Safety</a
+            >
+          </div>
+        </div>
 
-        <a> ⚖ GCC </a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true">
+            <i class="fa-solid fa-scale-balanced"></i> GCC
+            <i class="fa-solid fa-chevron-down nav-caret"></i>
+          </button>
+          <div class="submenu">
+            <a href="#gcc-2023"><i class="fa-solid fa-gavel"></i> GCC 2023</a>
+            <a href="#gcc-clauses"
+              ><i class="fa-solid fa-section"></i> Key Clauses</a
+            >
+            <a href="#gcc-circulars"
+              ><i class="fa-solid fa-bullhorn"></i> Circulars</a
+            >
+          </div>
+        </div>
 
-        <a> ••• Misc.. </a>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true">
+            <i class="fa-solid fa-ellipsis"></i> Misc.
+            <i class="fa-solid fa-chevron-down nav-caret"></i>
+          </button>
+          <div class="submenu submenu-right">
+            <a href="#calendar"
+              ><i class="fa-solid fa-calendar-days"></i> Holiday Calendar</a
+            >
+            <a href="#downloads"
+              ><i class="fa-solid fa-download"></i> Downloads</a
+            >
+            <a href="#contact"
+              ><i class="fa-solid fa-circle-question"></i> Help &amp; Contact</a
+            >
+          </div>
+        </div>
 
         <!-- Search -->
         <label>
@@ -90,7 +200,7 @@
             placeholder="Search documents, formats, updates..."
           />
 
-          <b>⌕</b>
+          <b><i class="fa-solid fa-magnifying-glass"></i></b>
         </label>
       </nav>
     </header>
@@ -104,41 +214,54 @@
              HERO SECTION
         =================================================== -->
 
-      <section class="hero">
-        <div>
-          <p>
-            YOUR
-            <em>COMPLETE CPWD</em>
-          </p>
-
-          <h1>
-            Engineering Resource<br />
-            for Smarter Construction
-          </h1>
-
-          <span>
-            A single platform for estimation, tendering, CPWD manuals,
-            specifications, rates and latest updates to support Engineers and
-            Contractors.
-          </span>
-
-          <!-- Hero Actions -->
-          <p class="actions">
-            <button>Explore Resources →</button>
-
-            <button>▧ Browse Documents</button>
-          </p>
+      <section
+        class="hero"
+        aria-roledescription="carousel"
+        aria-label="Featured initiatives"
+      >
+        <div class="hero-track">
+          <figure class="hero-slide is-active" aria-hidden="false">
+            <img src="/images/Img 1.png" alt="Building a Better Tomorrow" />
+          </figure>
+          <figure class="hero-slide" aria-hidden="true">
+            <img
+              src="/images/Img 2.png"
+              alt="Smart Infrastructure for a Brighter Future"
+            />
+          </figure>
+          <figure class="hero-slide" aria-hidden="true">
+            <img
+              src="/images/Img 3.png"
+              alt="Learning from Our Past, Building a Better Tomorrow"
+            />
+          </figure>
         </div>
 
-        <!-- Hero Quote -->
-        <strong>
-          Better<br />
-          Infrastructure<br />
-          Brighter Tomorrow
-        </strong>
+        <button
+          class="hero-arrow hero-prev"
+          type="button"
+          aria-label="Show previous slide"
+        >
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button
+          class="hero-arrow hero-next"
+          type="button"
+          aria-label="Show next slide"
+        >
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
 
-        <!-- Slider Indicators -->
-        <aside>●　○　○　○</aside>
+        <div class="hero-dots" aria-label="Choose a slide">
+          <button
+            class="is-active"
+            type="button"
+            aria-label="Show slide 1"
+            aria-current="true"
+          ></button>
+          <button type="button" aria-label="Show slide 2"></button>
+          <button type="button" aria-label="Show slide 3"></button>
+        </div>
       </section>
 
       <!-- ==================================================
@@ -170,8 +293,7 @@
             <h2>Survey Report Preparation</h2>
 
             <p>
-              Standard format and guidelines for site survey and report
-              preparation.
+              Standard format and guidelines for preparation of survey reports.
             </p>
 
             <a> Read More → </a>
@@ -222,7 +344,7 @@
 
         <section class="box menu">
           <header>
-            ☷
+            <i class="fa-solid fa-grip" aria-hidden="true"></i>
             <strong> MAIN MENU </strong>
 
             <a> View All → </a>
@@ -231,28 +353,90 @@
           <div>
             <!-- Menu Column 1 -->
             <ul>
-              <li>▦ Estimate ›</li>
-
-              <li>▧ NIT ›</li>
-
-              <li>♞ Tender ›</li>
-
-              <li>✚ Extra Item ›</li>
-
-              <li>↔ Deviation ›</li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-calculator"></i> Estimate</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu">
+                  <a href="#estimate-guides"><i class="fa-solid fa-book-open"></i> Estimate Guides</a>
+                  <a href="#estimate-templates"><i class="fa-solid fa-file-pen"></i> Templates</a>
+                  <a href="#rate-analysis"><i class="fa-solid fa-chart-line"></i> Rate Analysis</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-file-contract"></i> NIT</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu">
+                  <a href="#nit-format"><i class="fa-solid fa-file-lines"></i> NIT Format</a>
+                  <a href="#nit-checklist"><i class="fa-solid fa-list-check"></i> Checklist</a>
+                  <a href="#nit-notices"><i class="fa-solid fa-bullhorn"></i> Notices</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-gavel"></i> Tender</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu">
+                  <a href="#tender-documents"><i class="fa-solid fa-folder-open"></i> Documents</a>
+                  <a href="#tender-evaluation"><i class="fa-solid fa-clipboard-check"></i> Evaluation</a>
+                  <a href="#tender-award"><i class="fa-solid fa-award"></i> Award Process</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-circle-plus"></i> Extra Item</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu">
+                  <a href="#extra-item-rates"><i class="fa-solid fa-indian-rupee-sign"></i> Rate Approval</a>
+                  <a href="#extra-item-format"><i class="fa-solid fa-file-circle-plus"></i> Proposal Format</a>
+                  <a href="#extra-item-register"><i class="fa-solid fa-book"></i> Item Register</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-code-compare"></i> Deviation</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu">
+                  <a href="#deviation-statement"><i class="fa-solid fa-file-circle-exclamation"></i> Statement</a>
+                  <a href="#deviation-approval"><i class="fa-solid fa-stamp"></i> Approval</a>
+                  <a href="#deviation-guidelines"><i class="fa-solid fa-compass"></i> Guidelines</a>
+                </div>
+              </li>
             </ul>
 
             <!-- Menu Column 2 -->
             <ul>
-              <li>◕ EOT ›</li>
-
-              <li>⚉ Survey Report ›</li>
-
-              <li>⌂ Rent Assessment ›</li>
-
-              <li>▱ Yard Stick ›</li>
-
-              <li>••• Misc.. ›</li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-clock-rotate-left"></i> EOT</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu submenu-left">
+                  <a href="#eot-application"><i class="fa-solid fa-file-signature"></i> Application</a>
+                  <a href="#eot-review"><i class="fa-solid fa-magnifying-glass"></i> Review Notes</a>
+                  <a href="#eot-orders"><i class="fa-solid fa-file-circle-check"></i> EOT Orders</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-map-location-dot"></i> Survey Report</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu submenu-left">
+                  <a href="#survey-format"><i class="fa-solid fa-file-lines"></i> Report Format</a>
+                  <a href="#survey-checklist"><i class="fa-solid fa-clipboard-list"></i> Site Checklist</a>
+                  <a href="#survey-photos"><i class="fa-solid fa-camera"></i> Photo Record</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-house"></i> Rent Assessment</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu submenu-left">
+                  <a href="#rent-calculator"><i class="fa-solid fa-calculator"></i> Rent Calculator</a>
+                  <a href="#rent-forms"><i class="fa-solid fa-file-pen"></i> Assessment Forms</a>
+                  <a href="#rent-rules"><i class="fa-solid fa-scale-balanced"></i> Rules &amp; Rates</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-ruler-combined"></i> Yard Stick</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu submenu-left">
+                  <a href="#yardstick-index"><i class="fa-solid fa-list-ol"></i> Cost Index</a>
+                  <a href="#yardstick-rates"><i class="fa-solid fa-chart-column"></i> Benchmark Rates</a>
+                  <a href="#yardstick-guide"><i class="fa-solid fa-circle-info"></i> User Guide</a>
+                </div>
+              </li>
+              <li class="resource-item">
+                <button type="button" aria-haspopup="true"><span><i class="fa-solid fa-ellipsis"></i> Misc.</span><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="resource-submenu submenu-left">
+                  <a href="#misc-downloads"><i class="fa-solid fa-download"></i> Downloads</a>
+                  <a href="#misc-circulars"><i class="fa-solid fa-envelope-open-text"></i> Circulars</a>
+                  <a href="#misc-help"><i class="fa-solid fa-circle-question"></i> Help Centre</a>
+                </div>
+              </li>
             </ul>
           </div>
         </section>
@@ -431,5 +615,51 @@
         <small>More</small>
       </a>
     </nav>
+
+    <script>
+      const slides = [...document.querySelectorAll(".hero-slide")];
+      const dots = [...document.querySelectorAll(".hero-dots button")];
+      const previous = document.querySelector(".hero-prev");
+      const next = document.querySelector(".hero-next");
+      const carousel = document.querySelector(".hero");
+      let currentSlide = 0;
+      let autoSlide;
+
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const active = slideIndex === currentSlide;
+          slide.classList.toggle("is-active", active);
+          slide.setAttribute("aria-hidden", String(!active));
+          dots[slideIndex].classList.toggle("is-active", active);
+          dots[slideIndex].toggleAttribute("aria-current", active);
+        });
+      }
+
+      function startAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => showSlide(currentSlide + 1), 5000);
+      }
+
+      previous.addEventListener("click", () => {
+        showSlide(currentSlide - 1);
+        startAutoSlide();
+      });
+      next.addEventListener("click", () => {
+        showSlide(currentSlide + 1);
+        startAutoSlide();
+      });
+      dots.forEach((dot, index) =>
+        dot.addEventListener("click", () => {
+          showSlide(index);
+          startAutoSlide();
+        }),
+      );
+      carousel.addEventListener("mouseenter", () => clearInterval(autoSlide));
+      carousel.addEventListener("mouseleave", startAutoSlide);
+      carousel.addEventListener("focusin", () => clearInterval(autoSlide));
+      carousel.addEventListener("focusout", startAutoSlide);
+      startAutoSlide();
+    </script>
   </body>
 </html>
