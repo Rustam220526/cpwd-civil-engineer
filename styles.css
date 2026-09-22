@@ -649,8 +649,8 @@ footer {
 }
 
 .submenu-left {
-  right: calc(100% + 9px);
-  left: auto;
+  left: calc(100% + 9px);
+  right: auto;
   transform: translateX(6px);
 }
 
