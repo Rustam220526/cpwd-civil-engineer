@@ -572,7 +572,7 @@ footer {
   gap: 9px;
 }
 
-.resource-item > button span > i {
+.resource-item > span > i {
   width: 18px;
   color: var(--b);
   font-size: 16px;
