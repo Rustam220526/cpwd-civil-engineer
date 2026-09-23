@@ -848,17 +848,31 @@ footer b {
   .mainnav .submenu,
   .mainnav .nav-item:hover .submenu,
   .mainnav .nav-item:focus-within .submenu {
-    position: static;
+    position: absolute;
+    z-index: 30;
+    top: 100%;
+    right: auto;
+    left: 0;
     display: none;
+    width: min(250px, calc(100vw - 32px));
     min-width: 0;
+    padding: 8px;
+    border: 1px solid var(--l);
+    border-radius: 9px;
+    background: #fff;
     opacity: 1;
     visibility: visible;
     transform: none;
-    box-shadow: none;
+    box-shadow: 0 12px 28px rgba(4, 21, 99, 0.18);
   }
 
   .mainnav .nav-item.is-open .submenu {
     display: block;
+  }
+
+  .mainnav .nav-item:nth-last-of-type(-n + 2).is-open .submenu {
+    right: 0;
+    left: auto;
   }
 
   .mainnav .nav-item {
