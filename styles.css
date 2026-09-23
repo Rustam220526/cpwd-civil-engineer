@@ -829,8 +829,40 @@ footer b {
   /* Mobile Navigation */
 
   .mainnav {
-    overflow: auto;
+    height: auto;
+    flex-wrap: wrap;
+    overflow: visible;
     padding: 0 10px;
+  }
+
+  .mainnav > a,
+  .mainnav .nav-trigger {
+    min-height: 48px;
+  }
+
+  .mainnav label {
+    flex: 1 0 100%;
+    margin: 4px 0 8px;
+  }
+
+  .mainnav .submenu,
+  .mainnav .nav-item:hover .submenu,
+  .mainnav .nav-item:focus-within .submenu {
+    position: static;
+    display: none;
+    min-width: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .mainnav .nav-item.is-open .submenu {
+    display: block;
+  }
+
+  .mainnav .nav-item {
+    flex: 0 0 auto;
   }
 
   /* =====================================================

@@ -760,8 +760,25 @@
       const previous = document.querySelector(".hero-prev");
       const next = document.querySelector(".hero-next");
       const carousel = document.querySelector(".hero");
+      const navItems = [...document.querySelectorAll(".mainnav .nav-item")];
       let currentSlide = 0;
       let autoSlide;
+
+      navItems.forEach((item) => {
+        const trigger = item.querySelector(".nav-trigger");
+        trigger.setAttribute("aria-expanded", "false");
+        trigger.addEventListener("click", () => {
+          const willOpen = !item.classList.contains("is-open");
+          navItems.forEach((otherItem) => {
+            otherItem.classList.remove("is-open");
+            otherItem.querySelector(".nav-trigger").setAttribute("aria-expanded", "false");
+          });
+          if (willOpen) {
+            item.classList.add("is-open");
+            trigger.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
 
       function showSlide(index) {
         currentSlide = (index + slides.length) % slides.length;
