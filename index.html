@@ -85,6 +85,11 @@
         =================================================== -->
 
       <nav class="mainnav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav-content">
+          <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Menu</span>
+        </button>
+        <div class="mainnav-content" id="mainnav-content">
         <a class="active" href="#"><i class="fa-solid fa-house"></i> Home</a>
 
         <div class="nav-item">
@@ -241,6 +246,7 @@
 
           <b><i class="fa-solid fa-magnifying-glass"></i></b>
         </label>
+        </div>
       </nav>
     </header>
 
@@ -760,9 +766,17 @@
       const previous = document.querySelector(".hero-prev");
       const next = document.querySelector(".hero-next");
       const carousel = document.querySelector(".hero");
+      const mainNav = document.querySelector(".mainnav");
+      const navToggle = document.querySelector(".nav-toggle");
       const navItems = [...document.querySelectorAll(".mainnav .nav-item")];
       let currentSlide = 0;
       let autoSlide;
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        if (!isOpen) closeMainNavMenus();
+      });
 
       navItems.forEach((item) => {
         const trigger = item.querySelector(".nav-trigger");
@@ -788,12 +802,28 @@
       }
 
       document.addEventListener("pointerdown", (event) => {
+        if (!event.target.closest(".mainnav")) {
+          mainNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
         if (!event.target.closest(".mainnav .nav-item")) {
           closeMainNavMenus();
         }
       });
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeMainNavMenus();
+        if (event.key === "Escape") {
+          closeMainNavMenus();
+          mainNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.focus();
+        }
+      });
+      mainNav.querySelectorAll(".mainnav-content > a, .submenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          closeMainNavMenus();
+        });
       });
 
       function showSlide(index) {
