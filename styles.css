@@ -790,14 +790,6 @@ footer b {
 }
 
 /* =========================================================
-   MOBILE BOTTOM NAVIGATION
-========================================================= */
-
-.dock {
-  display: none;
-}
-
-/* =========================================================
    RESPONSIVE DESIGN
    Screens: 800px and below
 ========================================================= */
@@ -1069,49 +1061,4 @@ footer b {
     height: 60px;
   }
 
-  /* =====================================================
-       FIXED MOBILE DOCK
-    ====================================================== */
-
-  .dock {
-    position: fixed;
-
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    height: 65px;
-
-    background: #fff;
-
-    display: flex;
-    justify-content: space-around;
-
-    z-index: 9;
-
-    box-shadow: 0 -2px 10px #0002;
-  }
-
-  .dock a {
-    display: grid;
-    place-items: center;
-
-    color: #000;
-
-    font-size: 25px;
-  }
-
-  .dock a:first-child {
-    color: var(--b);
-  }
-
-  .dock small {
-    font-size: 10px;
-  }
-
-  /* Prevent content from hiding behind dock */
-
-  body {
-    padding-bottom: 65px;
-  }
 }
