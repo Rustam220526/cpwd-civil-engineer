@@ -814,20 +814,46 @@ footer b {
   /* Mobile Header */
 
   .top {
-    height: 95px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 8px;
+    height: auto;
+    min-height: 80px;
+    padding: 8px 10px;
   }
 
   .brand {
     font-size: 17px;
+    min-width: 0;
+    align-self: center;
+  }
+
+  .brand > span {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .brand small {
+    line-height: 1.25;
   }
 
   /* Mobile Authentication */
 
   .auth {
-    position: absolute;
+    position: static;
+    align-items: center;
+    justify-self: end;
+    gap: 6px;
+  }
 
-    top: 58px;
-    right: 15px;
+  .auth a {
+    padding: 8px 9px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   /* Mobile Navigation */
@@ -1020,16 +1046,35 @@ footer b {
 
   .resource-submenu,
   .submenu-left {
-    top: calc(100% + 4px);
-    right: auto;
-    left: 10px;
-    width: min(250px, calc(100vw - 44px));
-    transform: translateY(-6px);
+    position: static;
+    display: none;
+    width: auto;
+    margin: 0 8px 8px;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+
+  .resource-item {
+    height: auto;
+  }
+
+  .resource-item > button {
+    min-height: 44px;
   }
 
   .resource-item:hover .resource-submenu,
   .resource-item:focus-within .resource-submenu {
-    transform: translateY(0);
+    display: none;
+  }
+
+  .resource-item.is-open .resource-submenu {
+    display: block;
+  }
+
+  .resource-item.is-open > button > i {
+    transform: rotate(90deg);
   }
 
   /* Latest Updates */

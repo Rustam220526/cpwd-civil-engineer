@@ -738,6 +738,7 @@
       const mainNav = document.querySelector(".mainnav");
       const navToggle = document.querySelector(".nav-toggle");
       const navItems = [...document.querySelectorAll(".mainnav .nav-item")];
+      const resourceItems = [...document.querySelectorAll(".resource-item")];
       let currentSlide = 0;
       let autoSlide;
 
@@ -755,6 +756,23 @@
           navItems.forEach((otherItem) => {
             otherItem.classList.remove("is-open");
             otherItem.querySelector(".nav-trigger").setAttribute("aria-expanded", "false");
+          });
+          if (willOpen) {
+            item.classList.add("is-open");
+            trigger.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+      resourceItems.forEach((item) => {
+        const trigger = item.querySelector(":scope > button");
+        trigger.setAttribute("aria-expanded", "false");
+        trigger.addEventListener("click", () => {
+          if (!window.matchMedia("(max-width: 800px)").matches) return;
+          const willOpen = !item.classList.contains("is-open");
+          resourceItems.forEach((otherItem) => {
+            otherItem.classList.remove("is-open");
+            otherItem.querySelector(":scope > button").setAttribute("aria-expanded", "false");
           });
           if (willOpen) {
             item.classList.add("is-open");
