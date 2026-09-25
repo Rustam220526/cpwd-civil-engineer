@@ -1056,11 +1056,12 @@ footer b {
     box-shadow: none;
   }
 
-  .resource-item {
+  .menu li.resource-item {
     height: auto;
   }
 
   .resource-item > button {
+    height: auto;
     min-height: 44px;
   }
 
