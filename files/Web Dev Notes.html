@@ -1,0 +1,3418 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notes</title>
+<style>
+  :root {
+    --primary: #1f4e78;
+    --secondary: #eaf2f8;
+    --border: #b8c7d1;
+    --text: #222;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: var(--text);
+    background: #f5f7f9;
+  }
+  .document {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  }
+  h1, h2, h3 { color: var(--primary); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 28px;
+    overflow-x: auto;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th {
+    background: var(--secondary);
+    font-weight: 700;
+  }
+  tr:nth-child(even) td { background: #fafafa; }
+  p { margin: 0 0 8px; }
+  @media (max-width: 700px) {
+    body { padding: 8px; }
+    .document { padding: 15px; }
+    table { display: block; overflow-x: auto; white-space: normal; }
+  }
+
+      html { scroll-behavior: smooth; }
+      .toc {
+        background: #f0f6fa;
+        border: 1px solid #b8c7d1;
+        border-radius: 10px;
+        padding: 18px 22px;
+        margin-bottom: 30px;
+      }
+      .toc h1 { margin-top: 0; }
+      .toc ul { margin: 0; padding-left: 22px; }
+      .toc li { margin: 8px 0; }
+      .toc a {
+        color: #1f4e78;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .toc a:hover { text-decoration: underline; }
+      .major-section {
+        scroll-margin-top: 20px;
+        border-bottom: 2px solid #1f4e78;
+        padding-bottom: 6px;
+        margin-top: 40px;
+      }
+    
+      .toc ul ul {
+        margin-top: 6px;
+        padding-left: 24px;
+      }
+      .toc ul ul li {
+        margin: 5px 0;
+        font-weight: 400;
+      }
+      .toc a {
+        color: #1f4e78;
+        text-decoration: none;
+      }
+      .toc a:hover {
+        text-decoration: underline;
+      }
+      .subsection-heading {
+        scroll-margin-top: 20px;
+      }
+    
+html { scroll-behavior: smooth; }
+.anchor-target { scroll-margin-top: 24px; }
+.toc ul ul { margin-top: 6px; padding-left: 24px; }
+.toc li { margin: 6px 0; }
+.toc a { color: #1f4e78; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+html { scroll-behavior: smooth; }
+.anchor-target {
+    scroll-margin-top: 25px;
+}
+.toc ul ul {
+    margin-top: 6px;
+    padding-left: 24px;
+}
+.toc li {
+    margin: 6px 0;
+}
+.toc a {
+    color: #1f4e78;
+    text-decoration: none;
+}
+.toc a:hover {
+    text-decoration: underline;
+}
+
+html{scroll-behavior:smooth}
+.index-page{margin:0 0 45px}
+.index-hero{background:linear-gradient(135deg,#1f4e78,#287aa9);color:#fff;padding:32px 28px;border-radius:14px;margin-bottom:24px;box-shadow:0 6px 18px rgba(31,78,120,.18)}
+.index-hero h1{color:#fff;margin:0 0 7px;font-size:30px}
+.index-hero p{margin:0;opacity:.92}
+.index-table-wrap{overflow-x:auto;border:1px solid #cbd7df;border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.index-table{width:100%;border-collapse:collapse;margin:0;background:#fff}
+.index-table th{background:#eaf2f8;color:#173b5c;padding:13px 14px;border:1px solid #cbd7df}
+.index-table td{padding:10px 14px;border:1px solid #d7e0e6}
+.index-table .main-row td{background:#f3f8fb;font-weight:700;color:#173b5c}
+.index-table .sub-row td:nth-child(2){padding-left:30px}
+.index-table a{color:#1769aa;text-decoration:none;font-weight:600}
+.index-table a:hover{text-decoration:underline}
+.index-no{width:80px;text-align:center}.index-type{width:150px;text-align:center}.index-arrow{width:100px;text-align:center}
+.anchor-target{scroll-margin-top:25px}
+.index-back{text-align:right;margin:8px 0 10px;font-size:13px}
+.index-back a{color:#1769aa;text-decoration:none}
+@media(max-width:700px){.index-hero{padding:24px 18px}.index-hero h1{font-size:24px}.index-table th,.index-table td{padding:8px 9px}}
+
+/* ===== FINAL INDEX: 3 COLUMNS ===== */
+.index-page{margin:0 0 45px}
+.index-hero{background:linear-gradient(135deg,#1f4e78,#287aa9);color:#fff;padding:32px 28px;border-radius:14px;margin-bottom:24px;box-shadow:0 6px 18px rgba(31,78,120,.18)}
+.index-hero h1{color:#fff;margin:0 0 7px;font-size:30px}
+.index-hero p{margin:0;opacity:.92}
+.index-table-wrap{overflow-x:auto;border:1px solid #cbd7df;border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.index-table{width:100%;border-collapse:collapse;margin:0;background:#fff}
+.index-table th{background:#eaf2f8;color:#173b5c;padding:13px 14px;border:1px solid #cbd7df;text-align:left}
+.index-table td{padding:10px 14px;border:1px solid #d7e0e6;vertical-align:middle}
+.index-table .main-row td{background:#f3f8fb;font-weight:700;color:#173b5c}
+.index-table .sub-row td{background:#fff}
+.index-table .index-no{width:90px;text-align:center;font-weight:600}
+.index-table .index-topic{min-width:360px}
+.index-table .sub-topic{padding-left:48px !important;position:relative}
+.index-table .sub-topic:before{content:"↳";position:absolute;left:27px;color:#7a8b96}
+.index-table .index-page-no{width:110px;text-align:center;white-space:nowrap}
+.index-table a{color:#1769aa;text-decoration:none;font-weight:600}
+.index-table a:hover{color:#0b4f86;text-decoration:underline}
+.anchor-target{scroll-margin-top:25px}
+.index-back{text-align:right;margin:8px 0 10px;font-size:13px}
+.index-back a{color:#1769aa;text-decoration:none}
+@media(max-width:700px){
+ .index-hero{padding:24px 18px}.index-hero h1{font-size:24px}
+ .index-table th,.index-table td{padding:8px 9px}
+ .index-table .sub-topic{padding-left:38px !important}
+ .index-table .sub-topic:before{left:19px}
+}
+
+/* ===== PRINT / PAGE FOOTER ===== */
+@page {
+    margin: 18mm 15mm 18mm 15mm;
+    @bottom-left {
+        content: "Web Development & Git Notes";
+        font-size: 9pt;
+        color: #5f6f7a;
+    }
+    @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 9pt;
+        color: #5f6f7a;
+    }
+}
+
+/* Visible footer for normal browser view */
+#page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
+    padding: 9px 4px;
+    border-top: 1px solid #cbd7df;
+    color: #5f6f7a;
+    font-size: 12px;
+}
+#page-footer .footer-title {
+    font-weight: 600;
+}
+#page-footer .footer-page {
+    white-space: nowrap;
+}
+
+/*
+  Browser print engines support the page counter differently.
+  The @page rule above is used for PDF/print output.
+*/
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+    .document {
+        max-width: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    #page-footer {
+        display: none;
+    }
+
+    /* Avoid splitting important headings from their following content. */
+    h1, h2, h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+    table {
+        break-inside: auto;
+    }
+    tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+</style>
+</head>
+<body>
+<div class="document"><section class="index-page" id="index-page"><div class="index-hero"><h1>📚 WEB DEVELOPMENT &amp; GIT — INDEX</h1><p>Click any topic or sub-topic to jump directly to the relevant section.</p></div><div class="index-table-wrap"><table class="index-table"><thead><tr><th>S. No.</th><th>Topic / Sub-topic</th><th>Page No.</th></tr></thead><tbody><tr class="main-row"><td class="index-no">1</td><td class="index-topic"><a href="#section-html">HTML</a></td><td class="index-page-no">3–11</td></tr><tr class="sub-row"><td class="index-no">1.1</td><td class="index-topic sub-topic"><a href="#html-tags">Tags</a></td><td class="index-page-no">3–6</td></tr><tr class="sub-row"><td class="index-no">1.2</td><td class="index-topic sub-topic"><a href="#html-input-type">Input Type</a></td><td class="index-page-no">7–8</td></tr><tr class="sub-row"><td class="index-no">1.3</td><td class="index-topic sub-topic"><a href="#html-attributes">Attributes</a></td><td class="index-page-no">9–11</td></tr><tr class="main-row"><td class="index-no">2</td><td class="index-topic"><a href="#section-css">CSS</a></td><td class="index-page-no">12–18</td></tr><tr class="sub-row"><td class="index-no">2.1</td><td class="index-topic sub-topic"><a href="#css-properties">Properties</a></td><td class="index-page-no">12–15</td></tr><tr class="sub-row"><td class="index-no">2.2</td><td class="index-topic sub-topic"><a href="#css-selector">Selector</a></td><td class="index-page-no">15–18</td></tr><tr class="sub-row"><td class="index-no">2.3</td><td class="index-topic sub-topic"><a href="#css-root">:root</a></td><td class="index-page-no">18</td></tr><tr class="main-row"><td class="index-no">3</td><td class="index-topic"><a href="#section-javascript">JavaScript</a></td><td class="index-page-no">19–24</td></tr><tr class="main-row"><td class="index-no">4</td><td class="index-topic"><a href="#section-git">Git</a></td><td class="index-page-no">24–36</td></tr><tr class="sub-row"><td class="index-no">4.1</td><td class="index-topic sub-topic"><a href="#git-installation">Git Installation and Configuration</a></td><td class="index-page-no">24–25</td></tr><tr class="sub-row"><td class="index-no">4.2</td><td class="index-topic sub-topic"><a href="#git-directories">Working with Directories</a></td><td class="index-page-no">25</td></tr><tr class="sub-row"><td class="index-no">4.3</td><td class="index-topic sub-topic"><a href="#git-repository">Create or Download a Repository</a></td><td class="index-page-no">25–26</td></tr><tr class="sub-row"><td class="index-no">4.4</td><td class="index-topic sub-topic"><a href="#git-track">Check and Track File Changes</a></td><td class="index-page-no">26</td></tr><tr class="sub-row"><td class="index-no">4.5</td><td class="index-topic sub-topic"><a href="#git-commit">Add Files and Commit</a></td><td class="index-page-no">27</td></tr><tr class="sub-row"><td class="index-no">4.6</td><td class="index-topic sub-topic"><a href="#git-connect">Connect Local Repository to GitHub</a></td><td class="index-page-no">27–28</td></tr><tr class="sub-row"><td class="index-no">4.7</td><td class="index-topic sub-topic"><a href="#git-sync">Download and Synchronize Changes</a></td><td class="index-page-no">28</td></tr><tr class="sub-row"><td class="index-no">4.8</td><td class="index-topic sub-topic"><a href="#git-branches">Branch Commands</a></td><td class="index-page-no">29</td></tr><tr class="sub-row"><td class="index-no">4.9</td><td class="index-topic sub-topic"><a href="#git-push-branch">Push a New Branch to GitHub</a></td><td class="index-page-no">30</td></tr><tr class="sub-row"><td class="index-no">4.10</td><td class="index-topic sub-topic"><a href="#git-merge">Merge Branches</a></td><td class="index-page-no">30</td></tr><tr class="sub-row"><td class="index-no">4.11</td><td class="index-topic sub-topic"><a href="#git-conflicts">Resolve Merge Conflicts</a></td><td class="index-page-no">31</td></tr><tr class="sub-row"><td class="index-no">4.12</td><td class="index-topic sub-topic"><a href="#git-amend">Modify and Update Commits</a></td><td class="index-page-no">31–32</td></tr><tr class="sub-row"><td class="index-no">4.13</td><td class="index-topic sub-topic"><a href="#git-undo-files">Undo Changes in Files</a></td><td class="index-page-no">32</td></tr><tr class="sub-row"><td class="index-no">4.14</td><td class="index-topic sub-topic"><a href="#git-undo-commits">Undo or Delete Commits</a></td><td class="index-page-no">33</td></tr><tr class="sub-row"><td class="index-no">4.15</td><td class="index-topic sub-topic"><a href="#git-history">View and Analyze History</a></td><td class="index-page-no">33–34</td></tr><tr class="sub-row"><td class="index-no">4.16</td><td class="index-topic sub-topic"><a href="#git-tags">Tags and Releases</a></td><td class="index-page-no">34–35</td></tr><tr class="sub-row"><td class="index-no">4.17</td><td class="index-topic sub-topic"><a href="#git-delete-branch">Delete a GitHub Branch</a></td><td class="index-page-no">35</td></tr><tr class="sub-row"><td class="index-no">4.18</td><td class="index-topic sub-topic"><a href="#git-advanced">Useful Advanced Commands</a></td><td class="index-page-no">35–36</td></tr></tbody></table></div></section>
+<div class="table-wrap"></div>
+<h2 class="anchor-target anchor-target" id="section-html">HTML</h2><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<h3 class="anchor-target anchor-target" id="html-tags">Tags</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p> Tag</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>&lt;html&gt;</p></td>
+<td><p>Defines the root of an HTML document</p></td>
+<td><p>&lt;html&gt;...&lt;/html&gt;</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>&lt;head&gt;</p></td>
+<td><p>Contains page information/metadata</p></td>
+<td><p>&lt;head&gt;...&lt;/head&gt;</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>&lt;title&gt;</p></td>
+<td><p>Sets the browser tab title</p></td>
+<td><p>&lt;title&gt;My Website&lt;/title&gt;</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>&lt;body&gt;</p></td>
+<td><p>Contains visible webpage content</p></td>
+<td><p>&lt;body&gt;Hello&lt;/body&gt;</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>&lt;h1&gt;</p></td>
+<td><p>Creates the largest main heading</p></td>
+<td><p>&lt;h1&gt;Welcome&lt;/h1&gt;</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>&lt;h2&gt;</p></td>
+<td><p>Creates a level-2 heading</p></td>
+<td><p>&lt;h2&gt;About Us&lt;/h2&gt;</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>&lt;h3&gt;</p></td>
+<td><p>Creates a level-3 heading</p></td>
+<td><p>&lt;h3&gt;Services&lt;/h3&gt;</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>&lt;h4&gt;</p></td>
+<td><p>Creates a level-4 heading</p></td>
+<td><p>&lt;h4&gt;Details&lt;/h4&gt;</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>&lt;h5&gt;</p></td>
+<td><p>Creates a level-5 heading</p></td>
+<td><p>&lt;h5&gt;Information&lt;/h5&gt;</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>&lt;h6&gt;</p></td>
+<td><p>Creates the smallest heading</p></td>
+<td><p>&lt;h6&gt;Note&lt;/h6&gt;</p></td>
+</tr>
+<tr>
+<td><p>11</p></td>
+<td><p>&lt;p&gt;</p></td>
+<td><p>Defines a paragraph</p></td>
+<td><p>&lt;p&gt;This is a paragraph.&lt;/p&gt;</p></td>
+</tr>
+<tr>
+<td><p>12</p></td>
+<td><p>&lt;br&gt;</p></td>
+<td><p>Inserts a line break</p></td>
+<td><p>Hello&lt;br&gt;World</p></td>
+</tr>
+<tr>
+<td><p>13</p></td>
+<td><p>&lt;hr&gt;</p></td>
+<td><p>Creates a horizontal line</p></td>
+<td><p>&lt;hr&gt;</p></td>
+</tr>
+<tr>
+<td><p>14</p></td>
+<td><p>&lt;strong&gt;</p></td>
+<td><p>Shows important/bold text</p></td>
+<td><p>&lt;strong&gt;Important&lt;/strong&gt;</p></td>
+</tr>
+<tr>
+<td><p>15</p></td>
+<td><p>&lt;b&gt;</p></td>
+<td><p>Makes text bold</p></td>
+<td><p>&lt;b&gt;Bold text&lt;/b&gt;</p></td>
+</tr>
+<tr>
+<td><p>16</p></td>
+<td><p>&lt;em&gt;</p></td>
+<td><p>Emphasizes text, usually italic</p></td>
+<td><p>&lt;em&gt;Hello&lt;/em&gt;</p></td>
+</tr>
+<tr>
+<td><p>17</p></td>
+<td><p>&lt;i&gt;</p></td>
+<td><p>Makes text italic</p></td>
+<td><p>&lt;i&gt;Italic text&lt;/i&gt;</p></td>
+</tr>
+<tr>
+<td><p>18</p></td>
+<td><p>&lt;u&gt;</p></td>
+<td><p>Underlines text</p></td>
+<td><p>&lt;u&gt;Underline&lt;/u&gt;</p></td>
+</tr>
+<tr>
+<td><p>19</p></td>
+<td><p>&lt;mark&gt;</p></td>
+<td><p>Highlights text</p></td>
+<td><p>&lt;mark&gt;Important&lt;/mark&gt;</p></td>
+</tr>
+<tr>
+<td><p>20</p></td>
+<td><p>&lt;del&gt;</p></td>
+<td><p>Shows deleted text</p></td>
+<td><p>&lt;del&gt;竄ｹ500&lt;/del&gt;</p></td>
+</tr>
+<tr>
+<td><p>21</p></td>
+<td><p>&lt;ins&gt;</p></td>
+<td><p>Shows inserted text</p></td>
+<td><p>&lt;ins&gt;竄ｹ400&lt;/ins&gt;</p></td>
+</tr>
+<tr>
+<td><p>22</p></td>
+<td><p>&lt;small&gt;</p></td>
+<td><p>Displays smaller text</p></td>
+<td><p>&lt;small&gt;Terms apply&lt;/small&gt;</p></td>
+</tr>
+<tr>
+<td><p>23</p></td>
+<td><p>&lt;sub&gt;</p></td>
+<td><p>Creates subscript text</p></td>
+<td><p>H&lt;sub&gt;2&lt;/sub&gt;O</p></td>
+</tr>
+<tr>
+<td><p>24</p></td>
+<td><p>&lt;sup&gt;</p></td>
+<td><p>Creates superscript text</p></td>
+<td><p>X&lt;sup&gt;2&lt;/sup&gt;</p></td>
+</tr>
+<tr>
+<td><p>25</p></td>
+<td><p>&lt;a&gt;</p></td>
+<td><p>Creates a hyperlink</p></td>
+<td><p>&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;</p></td>
+</tr>
+<tr>
+<td><p>26</p></td>
+<td><p>&lt;img&gt;</p></td>
+<td><p>Displays an image</p></td>
+<td><p>&lt;img src="photo.jpg" alt="Photo"&gt;</p></td>
+</tr>
+<tr>
+<td><p>27</p></td>
+<td><p>&lt;video&gt;</p></td>
+<td><p>Embeds a video</p></td>
+<td><p>&lt;video controls src="video.mp4"&gt;&lt;/video&gt;</p></td>
+</tr>
+<tr>
+<td><p>28</p></td>
+<td><p>&lt;audio&gt;</p></td>
+<td><p>Embeds audio</p></td>
+<td><p>&lt;audio controls src="song.mp3"&gt;&lt;/audio&gt;</p></td>
+</tr>
+<tr>
+<td><p>29</p></td>
+<td><p>&lt;source&gt;</p></td>
+<td><p>Specifies media source</p></td>
+<td><p>&lt;source src="video.mp4"&gt;</p></td>
+</tr>
+<tr>
+<td><p>30</p></td>
+<td><p>&lt;ul&gt;</p></td>
+<td><p>Creates an unordered list</p></td>
+<td><p>&lt;ul&gt;&lt;li&gt;Apple&lt;/li&gt;&lt;/ul&gt;</p></td>
+</tr>
+<tr>
+<td><p>31</p></td>
+<td><p>&lt;ol&gt;</p></td>
+<td><p>Creates an ordered list</p></td>
+<td><p>&lt;ol&gt;&lt;li&gt;First&lt;/li&gt;&lt;/ol&gt;</p></td>
+</tr>
+<tr>
+<td><p>32</p></td>
+<td><p>&lt;li&gt;</p></td>
+<td><p>Defines a list item</p></td>
+<td><p>&lt;li&gt;HTML&lt;/li&gt;</p></td>
+</tr>
+<tr>
+<td><p>33</p></td>
+<td><p>&lt;dl&gt;</p></td>
+<td><p>Creates a description list</p></td>
+<td><p>&lt;dl&gt;...&lt;/dl&gt;</p></td>
+</tr>
+<tr>
+<td><p>34</p></td>
+<td><p>&lt;dt&gt;</p></td>
+<td><p>Defines a description term</p></td>
+<td><p>&lt;dt&gt;HTML&lt;/dt&gt;</p></td>
+</tr>
+<tr>
+<td><p>35</p></td>
+<td><p>&lt;dd&gt;</p></td>
+<td><p>Defines the term description</p></td>
+<td><p>&lt;dd&gt;Markup language&lt;/dd&gt;</p></td>
+</tr>
+<tr>
+<td><p>36</p></td>
+<td><p>&lt;div&gt;</p></td>
+<td><p>Creates a block-level container</p></td>
+<td><p>&lt;div&gt;Content&lt;/div&gt;</p></td>
+</tr>
+<tr>
+<td><p>37</p></td>
+<td><p>&lt;span&gt;</p></td>
+<td><p>Creates an inline container</p></td>
+<td><p>&lt;span&gt;Hello&lt;/span&gt;</p></td>
+</tr>
+<tr>
+<td><p>38</p></td>
+<td><p>&lt;header&gt;</p></td>
+<td><p>Defines the header section</p></td>
+<td><p>&lt;header&gt;Logo&lt;/header&gt;</p></td>
+</tr>
+<tr>
+<td><p>39</p></td>
+<td><p>&lt;nav&gt;</p></td>
+<td><p>Defines navigation links</p></td>
+<td><p>&lt;nav&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/nav&gt;</p></td>
+</tr>
+<tr>
+<td><p>40</p></td>
+<td><p>&lt;main&gt;</p></td>
+<td><p>Defines the main content</p></td>
+<td><p>&lt;main&gt;Content&lt;/main&gt;</p></td>
+</tr>
+<tr>
+<td><p>41</p></td>
+<td><p>&lt;section&gt;</p></td>
+<td><p>Defines a section of content</p></td>
+<td><p>&lt;section&gt;About&lt;/section&gt;</p></td>
+</tr>
+<tr>
+<td><p>42</p></td>
+<td><p>&lt;article&gt;</p></td>
+<td><p>Defines independent content</p></td>
+<td><p>&lt;article&gt;News&lt;/article&gt;</p></td>
+</tr>
+<tr>
+<td><p>43</p></td>
+<td><p>&lt;aside&gt;</p></td>
+<td><p>Defines side/secondary content</p></td>
+<td><p>&lt;aside&gt;Related Links&lt;/aside&gt;</p></td>
+</tr>
+<tr>
+<td><p>44</p></td>
+<td><p>&lt;footer&gt;</p></td>
+<td><p>Defines the footer</p></td>
+<td><p>&lt;footer&gt;Copyright&lt;/footer&gt;</p></td>
+</tr>
+<tr>
+<td><p>45</p></td>
+<td><p>&lt;form&gt;</p></td>
+<td><p>Creates an HTML form</p></td>
+<td><p>&lt;form&gt;...&lt;/form&gt;</p></td>
+</tr>
+<tr>
+<td><p>46</p></td>
+<td><p>&lt;label&gt;</p></td>
+<td><p>Defines a label for form input</p></td>
+<td><p>&lt;label&gt;Name&lt;/label&gt;</p></td>
+</tr>
+<tr>
+<td><p>47</p></td>
+<td><p>&lt;input&gt;</p></td>
+<td><p>Creates an input field</p></td>
+<td><p>&lt;input type="text"&gt;</p></td>
+</tr>
+<tr>
+<td><p>48</p></td>
+<td><p>&lt;textarea&gt;</p></td>
+<td><p>Creates a multi-line input</p></td>
+<td><p>&lt;textarea&gt;&lt;/textarea&gt;</p></td>
+</tr>
+<tr>
+<td><p>49</p></td>
+<td><p>&lt;button&gt;</p></td>
+<td><p>Creates a button</p></td>
+<td><p>&lt;button&gt;Submit&lt;/button&gt;</p></td>
+</tr>
+<tr>
+<td><p>50</p></td>
+<td><p>&lt;select&gt;</p></td>
+<td><p>Creates a dropdown list</p></td>
+<td><p>&lt;select&gt;...&lt;/select&gt;</p></td>
+</tr>
+<tr>
+<td><p>51</p></td>
+<td><p>&lt;option&gt;</p></td>
+<td><p>Defines a dropdown option</p></td>
+<td><p>&lt;option&gt;India&lt;/option&gt;</p></td>
+</tr>
+<tr>
+<td><p>52</p></td>
+<td><p>&lt;fieldset&gt;</p></td>
+<td><p>Groups related form controls</p></td>
+<td><p>&lt;fieldset&gt;...&lt;/fieldset&gt;</p></td>
+</tr>
+<tr>
+<td><p>53</p></td>
+<td><p>&lt;legend&gt;</p></td>
+<td><p>Provides a caption for fieldset</p></td>
+<td><p>&lt;legend&gt;Personal Info&lt;/legend&gt;</p></td>
+</tr>
+<tr>
+<td><p>54</p></td>
+<td><p>&lt;table&gt;</p></td>
+<td><p>Creates a table</p></td>
+<td><p>&lt;table&gt;...&lt;/table&gt;</p></td>
+</tr>
+<tr>
+<td><p>55</p></td>
+<td><p>&lt;tr&gt;</p></td>
+<td><p>Defines a table row</p></td>
+<td><p>&lt;tr&gt;...&lt;/tr&gt;</p></td>
+</tr>
+<tr>
+<td><p>56</p></td>
+<td><p>&lt;th&gt;</p></td>
+<td><p>Defines a table heading</p></td>
+<td><p>&lt;th&gt;Name&lt;/th&gt;</p></td>
+</tr>
+<tr>
+<td><p>57</p></td>
+<td><p>&lt;td&gt;</p></td>
+<td><p>Defines a table data cell</p></td>
+<td><p>&lt;td&gt;Ali&lt;/td&gt;</p></td>
+</tr>
+<tr>
+<td><p>58</p></td>
+<td><p>&lt;thead&gt;</p></td>
+<td><p>Defines table header section</p></td>
+<td><p>&lt;thead&gt;...&lt;/thead&gt;</p></td>
+</tr>
+<tr>
+<td><p>59</p></td>
+<td><p>&lt;tbody&gt;</p></td>
+<td><p>Defines table body</p></td>
+<td><p>&lt;tbody&gt;...&lt;/tbody&gt;</p></td>
+</tr>
+<tr>
+<td><p>60</p></td>
+<td><p>&lt;tfoot&gt;</p></td>
+<td><p>Defines table footer</p></td>
+<td><p>&lt;tfoot&gt;...&lt;/tfoot&gt;</p></td>
+</tr>
+<tr>
+<td><p>61</p></td>
+<td><p>&lt;caption&gt;</p></td>
+<td><p>Adds a table caption</p></td>
+<td><p>&lt;caption&gt;Employee List&lt;/caption&gt;</p></td>
+</tr>
+<tr>
+<td><p>62</p></td>
+<td><p>&lt;iframe&gt;</p></td>
+<td><p>Embeds another webpage/content</p></td>
+<td><p>&lt;iframe src="page.html"&gt;&lt;/iframe&gt;</p></td>
+</tr>
+<tr>
+<td><p>63</p></td>
+<td><p>&lt;details&gt;</p></td>
+<td><p>Creates expandable content</p></td>
+<td><p>&lt;details&gt;...&lt;/details&gt;</p></td>
+</tr>
+<tr>
+<td><p>64</p></td>
+<td><p>&lt;summary&gt;</p></td>
+<td><p>Defines the visible heading of details</p></td>
+<td><p>&lt;summary&gt;Read More&lt;/summary&gt;</p></td>
+</tr>
+<tr>
+<td><p>65</p></td>
+<td><p>&lt;figure&gt;</p></td>
+<td><p>Groups an image/illustration</p></td>
+<td><p>&lt;figure&gt;...&lt;/figure&gt;</p></td>
+</tr>
+<tr>
+<td><p>66</p></td>
+<td><p>&lt;figcaption&gt;</p></td>
+<td><p>Adds a caption to a figure</p></td>
+<td><p>&lt;figcaption&gt;Building Plan&lt;/figcaption&gt;</p></td>
+</tr>
+<tr>
+<td><p>67</p></td>
+<td><p>&lt;time&gt;</p></td>
+<td><p>Represents a date/time</p></td>
+<td><p>&lt;time&gt;2026-08-24&lt;/time&gt;</p></td>
+</tr>
+<tr>
+<td><p>68</p></td>
+<td><p>&lt;code&gt;</p></td>
+<td><p>Displays computer code</p></td>
+<td><p>&lt;code&gt;git status&lt;/code&gt;</p></td>
+</tr>
+<tr>
+<td><p>69</p></td>
+<td><p>&lt;pre&gt;</p></td>
+<td><p>Preserves spaces and line breaks</p></td>
+<td><p>&lt;pre&gt;Hello\nWorld&lt;/pre&gt;</p></td>
+</tr>
+<tr>
+<td><p>70</p></td>
+<td><p>&lt;!-- --&gt;</p></td>
+<td><p>Creates an HTML comment</p></td>
+<td><p>&lt;!-- This is a comment --&gt;</p></td>
+</tr>
+<tr>
+<td><p>71</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>72</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>73</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>74</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>75</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>76</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>77</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>78</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>79</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="html-input-type">Input Type</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Input Type</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>text</p></td>
+<td><p>Single-line text input</p></td>
+<td><p>&lt;input type="text"&gt;</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>password</p></td>
+<td><p>Password input; characters are hidden</p></td>
+<td><p>&lt;input type="password"&gt;</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>email</p></td>
+<td><p>Accepts an email address</p></td>
+<td><p>&lt;input type="email"&gt;</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>number</p></td>
+<td><p>Accepts numeric values</p></td>
+<td><p>&lt;input type="number"&gt;</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>tel</p></td>
+<td><p>Accepts telephone/mobile numbers</p></td>
+<td><p>&lt;input type="tel"&gt;</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>url</p></td>
+<td><p>Accepts a website URL</p></td>
+<td><p>&lt;input type="url"&gt;</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>search</p></td>
+<td><p>Search field</p></td>
+<td><p>&lt;input type="search"&gt;</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>date</p></td>
+<td><p>Selects a date</p></td>
+<td><p>&lt;input type="date"&gt;</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>time</p></td>
+<td><p>Selects a time</p></td>
+<td><p>&lt;input type="time"&gt;</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>datetime-local</p></td>
+<td><p>Selects date and time</p></td>
+<td><p>&lt;input type="datetime-local"&gt;</p></td>
+</tr>
+<tr>
+<td><p>11</p></td>
+<td><p>month</p></td>
+<td><p>Selects month and year</p></td>
+<td><p>&lt;input type="month"&gt;</p></td>
+</tr>
+<tr>
+<td><p>12</p></td>
+<td><p>week</p></td>
+<td><p>Selects a week</p></td>
+<td><p>&lt;input type="week"&gt;</p></td>
+</tr>
+<tr>
+<td><p>13</p></td>
+<td><p>color</p></td>
+<td><p>Opens a color picker</p></td>
+<td><p>&lt;input type="color"&gt;</p></td>
+</tr>
+<tr>
+<td><p>14</p></td>
+<td><p>range</p></td>
+<td><p>Creates a slider</p></td>
+<td><p>&lt;input type="range"&gt;</p></td>
+</tr>
+<tr>
+<td><p>15</p></td>
+<td><p>checkbox</p></td>
+<td><p>Allows multiple selections</p></td>
+<td><p>&lt;input type="checkbox"&gt;</p></td>
+</tr>
+<tr>
+<td><p>16</p></td>
+<td><p>radio</p></td>
+<td><p>Allows one selection from a group</p></td>
+<td><p>&lt;input type="radio"&gt;</p></td>
+</tr>
+<tr>
+<td><p>17</p></td>
+<td><p>file</p></td>
+<td><p>Allows file upload</p></td>
+<td><p>&lt;input type="file"&gt;</p></td>
+</tr>
+<tr>
+<td><p>18</p></td>
+<td><p>hidden</p></td>
+<td><p>Stores data hidden from the user</p></td>
+<td><p>&lt;input type="hidden" value="123"&gt;</p></td>
+</tr>
+<tr>
+<td><p>19</p></td>
+<td><p>submit</p></td>
+<td><p>Submits the form</p></td>
+<td><p>&lt;input type="submit" value="Submit"&gt;</p></td>
+</tr>
+<tr>
+<td><p>20</p></td>
+<td><p>reset</p></td>
+<td><p>Resets form fields</p></td>
+<td><p>&lt;input type="reset" value="Reset"&gt;</p></td>
+</tr>
+<tr>
+<td><p>21</p></td>
+<td><p>button</p></td>
+<td><p>Creates a basic button</p></td>
+<td><p>&lt;input type="button" value="Click"&gt;</p></td>
+</tr>
+<tr>
+<td><p>22</p></td>
+<td><p>image</p></td>
+<td><p>Uses an image as a submit button</p></td>
+<td><p>&lt;input type="image" src="submit.png"&gt;</p></td>
+</tr>
+<tr>
+<td><p>23</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>24</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>25</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>26</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>27</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>28</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>29</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>30</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="html-attributes">Attributes</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Attribute</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>type</p></td>
+<td><p>Specifies the type of input</p></td>
+<td><p>&lt;input type="text"&gt;</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>name</p></td>
+<td><p>Gives a name to the input; important when submitting forms</p></td>
+<td><p>&lt;input name="username"&gt;</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>id</p></td>
+<td><p>Gives a unique identifier to the input</p></td>
+<td><p>&lt;input id="email"&gt;</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>value</p></td>
+<td><p>Specifies the initial/current value</p></td>
+<td><p>&lt;input value="Ali"&gt;</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>placeholder</p></td>
+<td><p>Displays a hint inside the input</p></td>
+<td><p>&lt;input placeholder="Enter your name"&gt;</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>required</p></td>
+<td><p>Makes the field mandatory</p></td>
+<td><p>&lt;input required&gt;</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>disabled</p></td>
+<td><p>Disables the input</p></td>
+<td><p>&lt;input disabled&gt;</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>readonly</p></td>
+<td><p>Prevents editing but allows the value to be submitted</p></td>
+<td><p>&lt;input readonly value="India"&gt;</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>autofocus</p></td>
+<td><p>Automatically focuses the field when page loads</p></td>
+<td><p>&lt;input autofocus&gt;</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>autocomplete</p></td>
+<td><p>Controls browser autocomplete</p></td>
+<td><p>&lt;input autocomplete="name"&gt;</p></td>
+</tr>
+<tr>
+<td><p>11</p></td>
+<td><p>min</p></td>
+<td><p>Sets minimum value/date</p></td>
+<td><p>&lt;input type="number" min="1"&gt;</p></td>
+</tr>
+<tr>
+<td><p>12</p></td>
+<td><p>max</p></td>
+<td><p>Sets maximum value/date</p></td>
+<td><p>&lt;input type="number" max="100"&gt;</p></td>
+</tr>
+<tr>
+<td><p>13</p></td>
+<td><p>step</p></td>
+<td><p>Specifies allowed intervals for numbers</p></td>
+<td><p>&lt;input type="number" step="5"&gt;</p></td>
+</tr>
+<tr>
+<td><p>14</p></td>
+<td><p>minlength</p></td>
+<td><p>Specifies minimum number of characters</p></td>
+<td><p>&lt;input minlength="5"&gt;</p></td>
+</tr>
+<tr>
+<td><p>15</p></td>
+<td><p>maxlength</p></td>
+<td><p>Specifies maximum number of characters</p></td>
+<td><p>&lt;input maxlength="20"&gt;</p></td>
+</tr>
+<tr>
+<td><p>16</p></td>
+<td><p>pattern</p></td>
+<td><p>Specifies a validation pattern using regular expression</p></td>
+<td><p>&lt;input pattern="[A-Za-z]+"&gt;</p></td>
+</tr>
+<tr>
+<td><p>17</p></td>
+<td><p>size</p></td>
+<td><p>Specifies approximate visible width of text input</p></td>
+<td><p>&lt;input size="30"&gt;</p></td>
+</tr>
+<tr>
+<td><p>18</p></td>
+<td><p>multiple</p></td>
+<td><p>Allows multiple values/files</p></td>
+<td><p>&lt;input type="file" multiple&gt;</p></td>
+</tr>
+<tr>
+<td><p>19</p></td>
+<td><p>accept</p></td>
+<td><p>Specifies allowed file types</p></td>
+<td><p>&lt;input type="file" accept=".pdf"&gt;</p></td>
+</tr>
+<tr>
+<td><p>20</p></td>
+<td><p>checked</p></td>
+<td><p>Pre-selects checkbox/radio button</p></td>
+<td><p>&lt;input type="checkbox" checked&gt;</p></td>
+</tr>
+<tr>
+<td><p>21</p></td>
+<td><p>form</p></td>
+<td><p>Associates input with a specific form</p></td>
+<td><p>&lt;input form="myForm"&gt;</p></td>
+</tr>
+<tr>
+<td><p>22</p></td>
+<td><p>formaction</p></td>
+<td><p>Specifies where a submit input sends data</p></td>
+<td><p>&lt;input type="submit" formaction="/save"&gt;</p></td>
+</tr>
+<tr>
+<td><p>23</p></td>
+<td><p>formenctype</p></td>
+<td><p>Specifies how form data is encoded</p></td>
+<td><p>&lt;input type="submit" formenctype="multipart/form-data"&gt;</p></td>
+</tr>
+<tr>
+<td><p>24</p></td>
+<td><p>formmethod</p></td>
+<td><p>Specifies HTTP method for submission</p></td>
+<td><p>&lt;input type="submit" formmethod="post"&gt;</p></td>
+</tr>
+<tr>
+<td><p>25</p></td>
+<td><p>formnovalidate</p></td>
+<td><p>Disables validation during submission</p></td>
+<td><p>&lt;input type="submit" formnovalidate&gt;</p></td>
+</tr>
+<tr>
+<td><p>26</p></td>
+<td><p>formtarget</p></td>
+<td><p>Specifies where the response opens</p></td>
+<td><p>&lt;input type="submit" formtarget="_blank"&gt;</p></td>
+</tr>
+<tr>
+<td><p>27</p></td>
+<td><p>list</p></td>
+<td><p>Connects input to a &lt;datalist&gt;</p></td>
+<td><p>&lt;input list="cities"&gt;</p></td>
+</tr>
+<tr>
+<td><p>28</p></td>
+<td><p>spellcheck</p></td>
+<td><p>Controls browser spell checking</p></td>
+<td><p>&lt;input spellcheck="true"&gt;</p></td>
+</tr>
+<tr>
+<td><p>29</p></td>
+<td><p>inputmode</p></td>
+<td><p>Suggests an appropriate virtual keyboard</p></td>
+<td><p>&lt;input inputmode="numeric"&gt;</p></td>
+</tr>
+<tr>
+<td><p>30</p></td>
+<td><p>aria-label</p></td>
+<td><p>Provides an accessible label for screen readers</p></td>
+<td><p>&lt;input aria-label="Username"&gt;</p></td>
+</tr>
+<tr>
+<td><p>31</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>32</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>33</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>34</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>35</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>36</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h2 class="anchor-target anchor-target" id="section-css">CSS</h2><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<h3 class="anchor-target anchor-target" id="css-properties">Properties</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S No.</p></th>
+<th><p>Properties</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>color</p></td>
+<td><p>Sets text color</p></td>
+<td><p>color: blue;</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>background-color</p></td>
+<td><p>Sets background color</p></td>
+<td><p>background-color: lightblue;</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>background-image</p></td>
+<td><p>Adds a background image</p></td>
+<td><p>background-image: url("bg.jpg");</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>font-family</p></td>
+<td><p>Defines the font</p></td>
+<td><p>font-family: Arial;</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>font-size</p></td>
+<td><p>Sets text size</p></td>
+<td><p>font-size: 20px;</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>font-weight</p></td>
+<td><p>Sets text thickness</p></td>
+<td><p>font-weight: bold;</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>font-style</p></td>
+<td><p>Makes text italic</p></td>
+<td><p>font-style: italic;</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>text-align</p></td>
+<td><p>Aligns text</p></td>
+<td><p>text-align: center;</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>text-decoration</p></td>
+<td><p>Adds/removes decoration</p></td>
+<td><p>text-decoration: underline;</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>text-transform</p></td>
+<td><p>Changes text case</p></td>
+<td><p>text-transform: uppercase;</p></td>
+</tr>
+<tr>
+<td><p>11</p></td>
+<td><p>line-height</p></td>
+<td><p>Controls line spacing</p></td>
+<td><p>line-height: 1.5;</p></td>
+</tr>
+<tr>
+<td><p>12</p></td>
+<td><p>letter-spacing</p></td>
+<td><p>Controls space between letters</p></td>
+<td><p>letter-spacing: 2px;</p></td>
+</tr>
+<tr>
+<td><p>13</p></td>
+<td><p>word-spacing</p></td>
+<td><p>Controls space between words</p></td>
+<td><p>word-spacing: 5px;</p></td>
+</tr>
+<tr>
+<td><p>14</p></td>
+<td><p>width</p></td>
+<td><p>Sets element width</p></td>
+<td><p>width: 300px;</p></td>
+</tr>
+<tr>
+<td><p>15</p></td>
+<td><p>height</p></td>
+<td><p>Sets element height</p></td>
+<td><p>height: 200px;</p></td>
+</tr>
+<tr>
+<td><p>16</p></td>
+<td><p>max-width</p></td>
+<td><p>Sets maximum width</p></td>
+<td><p>max-width: 1200px;</p></td>
+</tr>
+<tr>
+<td><p>17</p></td>
+<td><p>min-width</p></td>
+<td><p>Sets minimum width</p></td>
+<td><p>min-width: 300px;</p></td>
+</tr>
+<tr>
+<td><p>18</p></td>
+<td><p>margin</p></td>
+<td><p>Sets outer spacing</p></td>
+<td><p>margin: 20px;</p></td>
+</tr>
+<tr>
+<td><p>19</p></td>
+<td><p>padding</p></td>
+<td><p>Sets inner spacing</p></td>
+<td><p>padding: 20px;</p></td>
+</tr>
+<tr>
+<td><p>20</p></td>
+<td><p>border</p></td>
+<td><p>Adds a border</p></td>
+<td><p>border: 1px solid black;</p></td>
+</tr>
+<tr>
+<td><p>21</p></td>
+<td><p>border-radius</p></td>
+<td><p>Rounds corners</p></td>
+<td><p>border-radius: 10px;</p></td>
+</tr>
+<tr>
+<td><p>22</p></td>
+<td><p>box-shadow</p></td>
+<td><p>Adds shadow around an element</p></td>
+<td><p>box-shadow: 0 4px 10px gray;</p></td>
+</tr>
+<tr>
+<td><p>23</p></td>
+<td><p>opacity</p></td>
+<td><p>Controls transparency</p></td>
+<td><p>opacity: 0.5;</p></td>
+</tr>
+<tr>
+<td><p>24</p></td>
+<td><p>display</p></td>
+<td><p>Controls element display behavior</p></td>
+<td><p>display: block;</p></td>
+</tr>
+<tr>
+<td><p>25</p></td>
+<td><p>visibility</p></td>
+<td><p>Shows/hides an element</p></td>
+<td><p>visibility: hidden;</p></td>
+</tr>
+<tr>
+<td><p>26</p></td>
+<td><p>position</p></td>
+<td><p>Controls element positioning</p></td>
+<td><p>position: relative;</p></td>
+</tr>
+<tr>
+<td><p>27</p></td>
+<td><p>top</p></td>
+<td><p>Moves positioned element from top</p></td>
+<td><p>top: 20px;</p></td>
+</tr>
+<tr>
+<td><p>28</p></td>
+<td><p>right</p></td>
+<td><p>Moves positioned element from right</p></td>
+<td><p>right: 10px;</p></td>
+</tr>
+<tr>
+<td><p>29</p></td>
+<td><p>bottom</p></td>
+<td><p>Moves positioned element from bottom</p></td>
+<td><p>bottom: 10px;</p></td>
+</tr>
+<tr>
+<td><p>30</p></td>
+<td><p>left</p></td>
+<td><p>Moves positioned element from left</p></td>
+<td><p>left: 20px;</p></td>
+</tr>
+<tr>
+<td><p>31</p></td>
+<td><p>z-index</p></td>
+<td><p>Controls stacking order</p></td>
+<td><p>z-index: 10;</p></td>
+</tr>
+<tr>
+<td><p>32</p></td>
+<td><p>overflow</p></td>
+<td><p>Controls overflowing content</p></td>
+<td><p>overflow: hidden;</p></td>
+</tr>
+<tr>
+<td><p>33</p></td>
+<td><p>cursor</p></td>
+<td><p>Changes mouse cursor</p></td>
+<td><p>cursor: pointer;</p></td>
+</tr>
+<tr>
+<td><p>34</p></td>
+<td><p>list-style</p></td>
+<td><p>Controls list markers</p></td>
+<td><p>list-style: none;</p></td>
+</tr>
+<tr>
+<td><p>35</p></td>
+<td><p>text-shadow</p></td>
+<td><p>Adds shadow to text</p></td>
+<td><p>text-shadow: 2px 2px 4px gray;</p></td>
+</tr>
+<tr>
+<td><p>36</p></td>
+<td><p>flex</p></td>
+<td><p>Defines flexible item behavior</p></td>
+<td><p>flex: 1;</p></td>
+</tr>
+<tr>
+<td><p>37</p></td>
+<td><p>flex-direction</p></td>
+<td><p>Sets Flexbox direction</p></td>
+<td><p>flex-direction: column;</p></td>
+</tr>
+<tr>
+<td><p>38</p></td>
+<td><p>justify-content</p></td>
+<td><p>Aligns Flexbox items horizontally/main axis</p></td>
+<td><p>justify-content: center;</p></td>
+</tr>
+<tr>
+<td><p>39</p></td>
+<td><p>align-items</p></td>
+<td><p>Aligns Flexbox items across the cross axis</p></td>
+<td><p>align-items: center;</p></td>
+</tr>
+<tr>
+<td><p>40</p></td>
+<td><p>gap</p></td>
+<td><p>Sets space between Flex/Grid items</p></td>
+<td><p>gap: 20px;</p></td>
+</tr>
+<tr>
+<td><p>41</p></td>
+<td><p>flex-wrap</p></td>
+<td><p>Allows items to wrap</p></td>
+<td><p>flex-wrap: wrap;</p></td>
+</tr>
+<tr>
+<td><p>42</p></td>
+<td><p>grid-template-columns</p></td>
+<td><p>Defines Grid columns</p></td>
+<td><p>grid-template-columns: 1fr 1fr;</p></td>
+</tr>
+<tr>
+<td><p>43</p></td>
+<td><p>grid-template-rows</p></td>
+<td><p>Defines Grid rows</p></td>
+<td><p>grid-template-rows: 100px 200px;</p></td>
+</tr>
+<tr>
+<td><p>44</p></td>
+<td><p>grid-column</p></td>
+<td><p>Controls Grid column placement</p></td>
+<td><p>grid-column: 1 / 3;</p></td>
+</tr>
+<tr>
+<td><p>45</p></td>
+<td><p>grid-row</p></td>
+<td><p>Controls Grid row placement</p></td>
+<td><p>grid-row: 1 / 3;</p></td>
+</tr>
+<tr>
+<td><p>46</p></td>
+<td><p>box-sizing</p></td>
+<td><p>Controls how width/height are calculated</p></td>
+<td><p>box-sizing: border-box;</p></td>
+</tr>
+<tr>
+<td><p>47</p></td>
+<td><p>float</p></td>
+<td><p>Floats an element</p></td>
+<td><p>float: left;</p></td>
+</tr>
+<tr>
+<td><p>48</p></td>
+<td><p>clear</p></td>
+<td><p>Controls floating elements</p></td>
+<td><p>clear: both;</p></td>
+</tr>
+<tr>
+<td><p>49</p></td>
+<td><p>transition</p></td>
+<td><p>Creates smooth property changes</p></td>
+<td><p>transition: 0.3s;</p></td>
+</tr>
+<tr>
+<td><p>50</p></td>
+<td><p>transform</p></td>
+<td><p>Moves, rotates, scales, or skews an element</p></td>
+<td><p>transform: scale(1.1);</p></td>
+</tr>
+<tr>
+<td><p>51</p></td>
+<td><p>animation</p></td>
+<td><p>Applies CSS animation</p></td>
+<td><p>animation: slide 2s;</p></td>
+</tr>
+<tr>
+<td><p>52</p></td>
+<td><p>content</p></td>
+<td><p>Inserts generated content</p></td>
+<td><p>content: "→";</p></td>
+</tr>
+<tr>
+<td><p>53</p></td>
+<td><p>object-fit</p></td>
+<td><p>Controls how an image/video fits its box</p></td>
+<td><p>object-fit: cover;</p></td>
+</tr>
+<tr>
+<td><p>54</p></td>
+<td><p>object-position</p></td>
+<td><p>Controls image/video position</p></td>
+<td><p>object-position: center;</p></td>
+</tr>
+<tr>
+<td><p>55</p></td>
+<td><p>vertical-align</p></td>
+<td><p>Aligns inline/table-cell content vertically</p></td>
+<td><p>vertical-align: middle;</p></td>
+</tr>
+<tr>
+<td><p>56</p></td>
+<td><p>white-space</p></td>
+<td><p>Controls text wrapping</p></td>
+<td><p>white-space: nowrap;</p></td>
+</tr>
+<tr>
+<td><p>57</p></td>
+<td><p>word-break</p></td>
+<td><p>Controls word breaking</p></td>
+<td><p>word-break: break-word;</p></td>
+</tr>
+<tr>
+<td><p>58</p></td>
+<td><p>resize</p></td>
+<td><p>Allows resizing of an element</p></td>
+<td><p>resize: both;</p></td>
+</tr>
+<tr>
+<td><p>59</p></td>
+<td><p>appearance</p></td>
+<td><p>Controls native UI appearance</p></td>
+<td><p>appearance: none;</p></td>
+</tr>
+<tr>
+<td><p>60</p></td>
+<td><p>filter</p></td>
+<td><p>Applies visual effects</p></td>
+<td><p>filter: blur(2px);</p></td>
+</tr>
+<tr>
+<td><p>61</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>62</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>63</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>64</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>65</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>66</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>67</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="css-selector">Selector</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S No.</p></th>
+<th><p>CSS Selector</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>*</p></td>
+<td><p>Universal selector — selects all elements</p></td>
+<td><p>* { margin: 0; }</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>element</p></td>
+<td><p>Element/Type selector — selects all elements of a type</p></td>
+<td><p>p { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>.class</p></td>
+<td><p>Class selector — selects elements having a specific class</p></td>
+<td><p>.box { padding: 10px; }</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>#id</p></td>
+<td><p>ID selector — selects an element with a specific ID</p></td>
+<td><p>#header { background: blue; }</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>element.class</p></td>
+<td><p>Selects a specific element having a class</p></td>
+<td><p>p.note { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>element#id</p></td>
+<td><p>Selects a specific element having an ID</p></td>
+<td><p>div#header { height: 100px; }</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>selector, selector</p></td>
+<td><p>Grouping selector — applies same CSS to multiple selectors</p></td>
+<td><p>h1, h2 { color: green; }</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>A B</p></td>
+<td><p>Descendant selector — selects B inside A at any level</p></td>
+<td><p>div p { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>A &gt; B</p></td>
+<td><p>Child selector — selects direct children only</p></td>
+<td><p>div &gt; p { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>A + B</p></td>
+<td><p>Adjacent sibling selector — selects B immediately after A</p></td>
+<td><p>h1 + p { color: gray; }</p></td>
+</tr>
+<tr>
+<td><p>11</p></td>
+<td><p>A ~ B</p></td>
+<td><p>General sibling selector — selects all B siblings after A</p></td>
+<td><p>h1 ~ p { color: green; }</p></td>
+</tr>
+<tr>
+<td><p>12</p></td>
+<td><p>[attribute]</p></td>
+<td><p>Attribute selector — selects elements having an attribute</p></td>
+<td><p>input[required] { border: 1px solid red; }</p></td>
+</tr>
+<tr>
+<td><p>13</p></td>
+<td><p>[attribute="value"]</p></td>
+<td><p>Selects elements with an exact attribute value</p></td>
+<td><p>input[type="text"] { width: 200px; }</p></td>
+</tr>
+<tr>
+<td><p>14</p></td>
+<td><p>[attribute~="value"]</p></td>
+<td><p>Selects attribute containing a specific word</p></td>
+<td><p>[class~="active"] { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>15</p></td>
+<td><p>[attribute^="value"]</p></td>
+<td><p>Selects attribute beginning with a value</p></td>
+<td><p>a[href^="https"] { color: green; }</p></td>
+</tr>
+<tr>
+<td><p>16</p></td>
+<td><p>[attribute$="value"]</p></td>
+<td><p>Selects attribute ending with a value</p></td>
+<td><p>a[href$=".pdf"] { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>17</p></td>
+<td><p>[attribute*="value"]</p></td>
+<td><p>Selects attribute containing a value anywhere</p></td>
+<td><p>a[href*="google"] { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>18</p></td>
+<td><p>:hover</p></td>
+<td><p>Selects an element when mouse is over it</p></td>
+<td><p>button:hover { background: black; }</p></td>
+</tr>
+<tr>
+<td><p>19</p></td>
+<td><p>:focus</p></td>
+<td><p>Selects an element when it receives focus</p></td>
+<td><p>input:focus { border: 2px solid blue; }</p></td>
+</tr>
+<tr>
+<td><p>20</p></td>
+<td><p>:active</p></td>
+<td><p>Selects an element while it is being activated/clicked</p></td>
+<td><p>button:active { transform: scale(.98); }</p></td>
+</tr>
+<tr>
+<td><p>21</p></td>
+<td><p>:visited</p></td>
+<td><p>Selects visited links</p></td>
+<td><p>a:visited { color: purple; }</p></td>
+</tr>
+<tr>
+<td><p>22</p></td>
+<td><p>:link</p></td>
+<td><p>Selects unvisited links</p></td>
+<td><p>a:link { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>23</p></td>
+<td><p>:first-child</p></td>
+<td><p>Selects an element that is the first child</p></td>
+<td><p>p:first-child { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>24</p></td>
+<td><p>:last-child</p></td>
+<td><p>Selects an element that is the last child</p></td>
+<td><p>p:last-child { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>25</p></td>
+<td><p>:nth-child(n)</p></td>
+<td><p>Selects an element based on its position among siblings</p></td>
+<td><p>li:nth-child(2) { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>26</p></td>
+<td><p>:nth-child(even)</p></td>
+<td><p>Selects even-numbered children</p></td>
+<td><p>tr:nth-child(even) { background: #eee; }</p></td>
+</tr>
+<tr>
+<td><p>27</p></td>
+<td><p>:nth-child(odd)</p></td>
+<td><p>Selects odd-numbered children</p></td>
+<td><p>tr:nth-child(odd) { background: #fff; }</p></td>
+</tr>
+<tr>
+<td><p>28</p></td>
+<td><p>:first-of-type</p></td>
+<td><p>Selects first element of its type</p></td>
+<td><p>p:first-of-type { color: red; }</p></td>
+</tr>
+<tr>
+<td><p>29</p></td>
+<td><p>:last-of-type</p></td>
+<td><p>Selects last element of its type</p></td>
+<td><p>p:last-of-type { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>30</p></td>
+<td><p>:nth-of-type(n)</p></td>
+<td><p>Selects element based on its type position</p></td>
+<td><p>p:nth-of-type(2) { color: green; }</p></td>
+</tr>
+<tr>
+<td><p>31</p></td>
+<td><p>:not()</p></td>
+<td><p>Selects elements that do not match a selector</p></td>
+<td><p>p:not(.special) { color: gray; }</p></td>
+</tr>
+<tr>
+<td><p>32</p></td>
+<td><p>:is()</p></td>
+<td><p>Matches any selector inside the list</p></td>
+<td><p>:is(h1, h2, h3) { color: blue; }</p></td>
+</tr>
+<tr>
+<td><p>33</p></td>
+<td><p>:where()</p></td>
+<td><p>Similar to :is(), but has zero specificity</p></td>
+<td><p>:where(h1, h2) { margin: 0; }</p></td>
+</tr>
+<tr>
+<td><p>34</p></td>
+<td><p>:has()</p></td>
+<td><p>Selects an element based on its descendant/related element</p></td>
+<td><p>div:has(img) { padding: 10px; }</p></td>
+</tr>
+<tr>
+<td><p>35</p></td>
+<td><p>::before</p></td>
+<td><p>Inserts generated content before an element's content</p></td>
+<td><p>p::before { content: "→ "; }</p></td>
+</tr>
+<tr>
+<td><p>36</p></td>
+<td><p>::after</p></td>
+<td><p>Inserts generated content after an element's content</p></td>
+<td><p>p::after { content: " ✓"; }</p></td>
+</tr>
+<tr>
+<td><p>37</p></td>
+<td><p>::first-letter</p></td>
+<td><p>Selects the first letter of text</p></td>
+<td><p>p::first-letter { font-size: 30px; }</p></td>
+</tr>
+<tr>
+<td><p>38</p></td>
+<td><p>::first-line</p></td>
+<td><p>Selects the first line of text</p></td>
+<td><p>p::first-line { font-weight: bold; }</p></td>
+</tr>
+<tr>
+<td><p>39</p></td>
+<td><p>::selection</p></td>
+<td><p>Styles text selected by the user</p></td>
+<td><p>::selection { background: yellow; }</p></td>
+</tr>
+<tr>
+<td><p>40</p></td>
+<td><p>::placeholder</p></td>
+<td><p>Styles placeholder text in form controls</p></td>
+<td><p>input::placeholder { color: gray; }</p></td>
+</tr>
+<tr>
+<td><p>41</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>42</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>43</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>44</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td><p>45</p></td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="css-root">:root</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<p>:root {</p>
+<p>--primary-color: #3498db;</p>
+<p>--text-color: #222;</p>
+<p>--spacing: 20px;</p>
+<p>}</p>
+<p>h1 {</p>
+<p>color: var(--primary-color);</p>
+<p>}</p>
+<p>p {</p>
+<p>color: var(--text-color);</p>
+<p>}</p>
+<p>.container {</p>
+<p>padding: var(--spacing);</p>
+<p>}</p>
+<h2 class="major-section anchor-target anchor-target" id="section-javascript">JavaScript</h2><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S.No.</p></th>
+<th><p>JavaScript Topics</p></th>
+<th><p>Sub-topics</p></th>
+<th><p>Brief Description</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>Fundamentals</p></td>
+<td><p>JavaScript, ECMAScript, Syntax, Statements, Expressions, Comments, var, let, const, Console, Strict Mode</p></td>
+<td><p>Learn the basic structure, syntax, and execution of JavaScript programs.</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>Data Types</p></td>
+<td><p>String, Number, Boolean, undefined, null, BigInt, Symbol, Primitive &amp; Reference Types, typeof</p></td>
+<td><p>Understand the different kinds of data JavaScript can store and manipulate.</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>Operators</p></td>
+<td><p>Arithmetic, Assignment, Comparison, Logical, Increment/Decrement, Ternary, Nullish Coalescing, Optional Chaining, Spread/Rest</p></td>
+<td><p>Learn how JavaScript performs calculations, comparisons, assignments and logical operations.</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>Conditions</p></td>
+<td><p>if, else, else if, switch, Ternary Operator, Nested Conditions, Truthy/Falsy, Short-circuit Evaluation</p></td>
+<td><p>Control which code executes based on different conditions.</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>Loops</p></td>
+<td><p>for, while, do...while, for...of, for...in, break, continue, Iteration</p></td>
+<td><p>Execute a block of code repeatedly and work efficiently with collections.</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>Functions</p></td>
+<td><p>Function Declaration, Expression, Arrow Function, Parameters, Arguments, Return, Default Parameters, Callback, Higher-order Functions, Recursion, IIFE</p></td>
+<td><p>Learn to create reusable blocks of code and understand how functions behave.</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>Scope</p></td>
+<td><p>Global Scope, Function Scope, Block Scope, Module Scope, Lexical Scope, Scope Chain, Variable Shadowing</p></td>
+<td><p>Understand where variables can be accessed and how JavaScript resolves variables.</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>Strings</p></td>
+<td><p>String Creation, Indexing, Template Literals, Concatenation, slice(), substring(), replace(), split(), trim(), includes(), Case Conversion</p></td>
+<td><p>Learn to create, search, modify, and format text.</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>Arrays</p></td>
+<td><p>Creating Arrays, Indexing, Nested Arrays, push(), pop(), shift(), unshift(), slice(), splice(), map(), filter(), reduce(), find(), sort(), forEach()</p></td>
+<td><p>Master collection handling; especially map(), filter(), and reduce() for modern development.</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>Objects</p></td>
+<td><p>Properties, Methods, Dot/Bracket Notation, Nested Objects, Computed Properties, Object.keys(), Object.values(), Object.entries(), Object.assign()</p></td>
+<td><p>Learn how to represent and manipulate structured data.</p></td>
+</tr>
+<tr>
+<td><p>11</p></td>
+<td><p>ES6+</p></td>
+<td><p>let, const, Arrow Functions, Template Literals, Default Parameters, Modules, Classes, Promises, for...of, Optional Chaining, Nullish Coalescing</p></td>
+<td><p>Learn modern JavaScript features introduced through ES6 and later ECMAScript versions.</p></td>
+</tr>
+<tr>
+<td><p>12</p></td>
+<td><p>Destructuring / Spread / Rest</p></td>
+<td><p>Array Destructuring, Object Destructuring, Default Values, Renaming, Nested Destructuring, Spread Operator, Rest Parameters</p></td>
+<td><p>Simplify working with arrays, objects, and function parameters. Extremely important for React.</p></td>
+</tr>
+<tr>
+<td><p>13</p></td>
+<td><p>DOM</p></td>
+<td><p>DOM Tree, Nodes, Elements, document, querySelector(), getElementById(), createElement(), append(), remove(), textContent, innerHTML, classList</p></td>
+<td><p>Learn how JavaScript accesses and dynamically changes HTML elements.</p></td>
+</tr>
+<tr>
+<td><p>14</p></td>
+<td><p>Events</p></td>
+<td><p>click, input, change, submit, keydown, keyup, Event Object, addEventListener(), Bubbling, Capturing, Delegation, preventDefault()</p></td>
+<td><p>Learn how JavaScript responds to user actions and browser events.</p></td>
+</tr>
+<tr>
+<td><p>15</p></td>
+<td><p>Forms</p></td>
+<td><p>Form Elements, Input Values, Form Submission, Validation, FormData, Checkbox, Radio, Select, Textarea, File Input</p></td>
+<td><p>Learn how to collect, validate and process user-entered information.</p></td>
+</tr>
+<tr>
+<td><p>16</p></td>
+<td><p>Modules</p></td>
+<td><p>import, export, Named Export, Default Export, Module Scope, Dynamic Import, ES Modules, CommonJS</p></td>
+<td><p>Organize large JavaScript applications into reusable files and modules.</p></td>
+</tr>
+<tr>
+<td><p>17</p></td>
+<td><p>Error Handling</p></td>
+<td><p>try, catch, finally, throw, Error, Custom Errors, Error Propagation, Async Errors</p></td>
+<td><p>Learn how to detect, handle and report errors without breaking applications.</p></td>
+</tr>
+<tr>
+<td><p>18</p></td>
+<td><p>JSON</p></td>
+<td><p>JSON Structure, Objects, Arrays, JSON.parse(), JSON.stringify(), Serialization, Deserialization</p></td>
+<td><p>Learn the standard data format commonly used for communication between front-end and backend.</p></td>
+</tr>
+<tr>
+<td><p>19</p></td>
+<td><p>Promises</p></td>
+<td><p>Promise States, Pending, Fulfilled, Rejected, .then(), .catch(), .finally(), Promise.all(), Promise.allSettled(), Promise.race(), Promise.any()</p></td>
+<td><p>Understand modern asynchronous programming and operations that complete in the future.</p></td>
+</tr>
+<tr>
+<td><p>20</p></td>
+<td><p>Async / Await</p></td>
+<td><p>async, await, try/catch, Async Functions, Sequential vs Parallel Operations, Error Handling</p></td>
+<td><p>Write asynchronous code in a cleaner, easier-to-read style.</p></td>
+</tr>
+<tr>
+<td><p>21</p></td>
+<td><p>Fetch / APIs</p></td>
+<td><p>Fetch API, HTTP Methods, GET, POST, PUT, PATCH, DELETE, Request, Response, Headers, Body, Query Parameters, Status Codes</p></td>
+<td><p>Learn how JavaScript communicates with external services and backend APIs.</p></td>
+</tr>
+<tr>
+<td><p>22</p></td>
+<td><p>Closures</p></td>
+<td><p>Lexical Environment, Inner Functions, Outer Scope, Data Privacy, Function Factories, Closures with Callbacks</p></td>
+<td><p>Understand how functions remember variables from their surrounding scope. Very important for advanced JavaScript and React.</p></td>
+</tr>
+<tr>
+<td><p>23</p></td>
+<td><p>this</p></td>
+<td><p>Global this, Object Methods, Regular Functions, Arrow Functions, Constructors, Classes, call(), apply(), bind()</p></td>
+<td><p>Understand how JavaScript determines the value of this in different situations.</p></td>
+</tr>
+<tr>
+<td><p>24</p></td>
+<td><p>Prototypes</p></td>
+<td><p>Prototype, prototype, __proto__, Prototype Chain, Constructor Functions, Inheritance, Object.create()</p></td>
+<td><p>Understand JavaScript's underlying object inheritance mechanism.</p></td>
+</tr>
+<tr>
+<td><p>25</p></td>
+<td><p>Classes / OOP</p></td>
+<td><p>class, constructor, Methods, extends, super, Inheritance, Encapsulation, Polymorphism, Getters/Setters, Private Fields</p></td>
+<td><p>Learn object-oriented programming and JavaScript's class syntax.</p></td>
+</tr>
+<tr>
+<td><p>26</p></td>
+<td><p>Execution Context</p></td>
+<td><p>Global Execution Context, Function Execution Context, Execution Context Stack, Lexical Environment, Variable Environment</p></td>
+<td><p>Understand what JavaScript creates internally when executing code.</p></td>
+</tr>
+<tr>
+<td><p>27</p></td>
+<td><p>Call Stack</p></td>
+<td><p>Stack Frames, Function Calls, Execution Order, Stack Overflow, Synchronous Execution</p></td>
+<td><p>Understand how JavaScript keeps track of currently executing functions.</p></td>
+</tr>
+<tr>
+<td><p>28</p></td>
+<td><p>Event Loop</p></td>
+<td><p>Call Stack, Web/Runtime APIs, Task Queue, Microtask Queue, Event Loop, Promises, Timers, Rendering</p></td>
+<td><p>Understand how JavaScript handles asynchronous operations despite being primarily single-threaded.</p></td>
+</tr>
+<tr>
+<td><p>29</p></td>
+<td><p>Memory Management</p></td>
+<td><p>Stack, Heap, References, Garbage Collection, Memory Allocation, Memory Leaks, Closures &amp; Memory</p></td>
+<td><p>Understand how JavaScript stores, uses and releases memory.</p></td>
+</tr>
+<tr>
+<td><p>30</p></td>
+<td><p>Web APIs</p></td>
+<td><p>LocalStorage, SessionStorage, Fetch, URL, History, Clipboard, Geolocation, WebSocket, Web Workers, Intersection Observer</p></td>
+<td><p>Learn browser-provided APIs that extend JavaScript's capabilities.</p></td>
+</tr>
+<tr>
+<td><p>31</p></td>
+<td><p>Performance</p></td>
+<td><p>Debouncing, Throttling, Lazy Loading, Code Splitting, DOM Optimization, Memory Optimization, Web Workers, Performance Profiling</p></td>
+<td><p>Learn how to make JavaScript applications faster and more efficient.</p></td>
+</tr>
+<tr>
+<td><p>32</p></td>
+<td><p>Security</p></td>
+<td><p>XSS, CSRF, CORS, Same-Origin Policy, Content Security Policy, Cookies, Secure Storage, Input Validation, Dependency Security</p></td>
+<td><p>Learn how to write safer JavaScript applications and avoid common web vulnerabilities.</p></td>
+</tr>
+<tr>
+<td><p>33</p></td>
+<td><p>Testing</p></td>
+<td><p>Unit Testing, Integration Testing, End-to-End Testing, Assertions, Mocking, Test Coverage, Test Cases</p></td>
+<td><p>Learn how to verify that JavaScript code works correctly and remains reliable after changes.</p></td>
+</tr>
+<tr>
+<td><p>34</p></td>
+<td><p>Tooling</p></td>
+<td><p>Node.js, npm, package.json, npm Scripts, Dependencies, Vite, ESLint, Prettier, Environment Variables, Build Tools</p></td>
+<td><p>Learn the tools used to develop, format, test, build and manage modern JavaScript projects.</p></td>
+</tr>
+<tr>
+<td><p>35</p></td>
+<td><p>Advanced Patterns</p></td>
+<td><p>Module Pattern, Factory Pattern, Observer, Singleton, Strategy, Adapter, Composition, Dependency Injection, Pub/Sub</p></td>
+<td><p>Learn reusable architectural approaches for solving common software-development problems.</p></td>
+</tr>
+</tbody>
+</table></div>
+<h2 class="anchor-target" id="section-git">Grit</h2><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<h3 class="anchor-target anchor-target" id="git-installation">Git Installation and Configuration</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git --version</p></td>
+<td><p>Check Git installation</p></td>
+<td><p>git --version</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git config --global user.name</p></td>
+<td><p>Set your Git username</p></td>
+<td><p>git config --global user.name "Rustam Ali"</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git config --global user.email</p></td>
+<td><p>Set your Git email</p></td>
+<td><p>git config --global user.email "you@example.com"</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git config --global user.name</p></td>
+<td><p>Display configured username</p></td>
+<td><p>git config --global user.name</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git config --global user.email</p></td>
+<td><p>Display configured email</p></td>
+<td><p>git config --global user.email</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git config --list</p></td>
+<td><p>View Git configuration</p></td>
+<td><p>git config --list</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git config --global init.defaultBranch main</p></td>
+<td><p>Set default initial branch</p></td>
+<td><p>git config --global init.defaultBranch main</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git help</p></td>
+<td><p>Open Git help</p></td>
+<td><p>git help</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>q</p></td>
+<td><p>switch to working directory</p></td>
+<td><p>q</p></td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-directories">Working with Directories</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>pwd</p></td>
+<td><p>Show current directory</p></td>
+<td><p>pwd</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>ls</p></td>
+<td><p>List files and folders</p></td>
+<td><p>ls</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>ls -la</p></td>
+<td><p>Show hidden files</p></td>
+<td><p>ls -la</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>cd folder</p></td>
+<td><p>Enter a folder</p></td>
+<td><p>cd my-website or cd "my project"</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>cd ..</p></td>
+<td><p>Go to parent folder</p></td>
+<td><p>cd ..</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>cd ~</p></td>
+<td><p>Go to home directory</p></td>
+<td><p>cd ~</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>clear</p></td>
+<td><p>Clear Git Bash screen</p></td>
+<td><p>clear</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>mkdir folder</p></td>
+<td><p>Create a folder</p></td>
+<td><p>mkdir my-website</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>rm file name</p></td>
+<td><p>Delete a file</p></td>
+<td><p>rm index.html</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>touch filename.txt</p></td>
+<td><p>Create a new file</p></td>
+<td><p>touch index.html</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-repository">Create or Download a Repository</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git init</p></td>
+<td><p>Initialize a local repository</p></td>
+<td><p>git init</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git clone URL</p></td>
+<td><p>Download a GitHub repository</p></td>
+<td><p>git clone https://github.com/user/project.git</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git clone URL folder</p></td>
+<td><p>Clone into a specific folder</p></td>
+<td><p>git clone URL my-project</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git status</p></td>
+<td><p>Show repository status</p></td>
+<td><p>git status</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git rev-parse --show-toplevel</p></td>
+<td><p>Show repository root</p></td>
+<td><p>git rev-parse --show-toplevel</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-track">Check and Track File Changes</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git status</p></td>
+<td><p>Show modified and untracked files</p></td>
+<td><p>git status</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git diff</p></td>
+<td><p>Show unstaged changes</p></td>
+<td><p>git diff</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git diff filename</p></td>
+<td><p>Compare one file</p></td>
+<td><p>git diff index.html</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git diff --staged</p></td>
+<td><p>Show staged changes</p></td>
+<td><p>git diff --staged</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git diff HEAD</p></td>
+<td><p>Show all changes since last commit</p></td>
+<td><p>git diff HEAD</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git ls-files</p></td>
+<td><p>Show tracked files</p></td>
+<td><p>git ls-files</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-commit">Add Files and Commit</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git add filename</p></td>
+<td><p>Stage one file</p></td>
+<td><p>git add index.html</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git add .</p></td>
+<td><p>Stage changes in the current directory</p></td>
+<td><p>git add .</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git add -A</p></td>
+<td><p>Stage all changes, including deletions</p></td>
+<td><p>git add -A</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git commit -m "message"</p></td>
+<td><p>Create a commit</p></td>
+<td><p>git commit -m "Add homepage"</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git commit -am "message"</p></td>
+<td><p>Stage modifications/deletions of tracked files and commit</p></td>
+<td><p>git commit -am "Update CSS"</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git log</p></td>
+<td><p>Show commit history</p></td>
+<td><p>git log</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git log --oneline</p></td>
+<td><p>Show compact commit history</p></td>
+<td><p>git log --oneline</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git show</p></td>
+<td><p>Show latest commit details</p></td>
+<td><p>git show</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-connect">Connect Local Repository to GitHub</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git remote -v</p></td>
+<td><p>Show remote URLs</p></td>
+<td><p>git remote -v</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git remote add origin URL</p></td>
+<td><p>Add GitHub remote</p></td>
+<td><p>git remote add origin URL</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git remote get-url origin</p></td>
+<td><p>Display remote URL</p></td>
+<td><p>git remote get-url origin</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git remote set-url origin URL</p></td>
+<td><p>Change remote URL</p></td>
+<td><p>git remote set-url origin URL</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git remote remove origin</p></td>
+<td><p>Remove remote configuration</p></td>
+<td><p>git remote remove origin</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git push -u origin main</p></td>
+<td><p>Push main and set upstream</p></td>
+<td><p>git push -u origin main</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-sync">Download and Synchronize Changes</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git fetch</p></td>
+<td><p>Download remote updates without merging</p></td>
+<td><p>git fetch origin</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git fetch --all</p></td>
+<td><p>Fetch from all remotes</p></td>
+<td><p>git fetch --all</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git pull</p></td>
+<td><p>Fetch and integrate changes</p></td>
+<td><p>git pull</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git pull origin main</p></td>
+<td><p>Pull from a specific branch</p></td>
+<td><p>git pull origin main</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git push</p></td>
+<td><p>Push committed changes</p></td>
+<td><p>git push</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git push origin main</p></td>
+<td><p>Push main branch</p></td>
+<td><p>git push origin main</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git push -u origin branch</p></td>
+<td><p>Push a branch and set upstream</p></td>
+<td><p>git push -u origin header</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git fetch --prune</p></td>
+<td><p>Remove obsolete remote-tracking references</p></td>
+<td><p>git fetch --prune</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-branches">Branch Commands</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git branch</p></td>
+<td><p>Show local branches</p></td>
+<td><p>git branch</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git branch -a</p></td>
+<td><p>Show local and remote branches</p></td>
+<td><p>git branch -a</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git branch -r</p></td>
+<td><p>Show remote branches</p></td>
+<td><p>git branch -r</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git branch header</p></td>
+<td><p>Create a branch</p></td>
+<td><p>git branch header</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git switch header</p></td>
+<td><p>Switch to a branch</p></td>
+<td><p>git switch header</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git switch -c header</p></td>
+<td><p>Create and switch to a branch</p></td>
+<td><p>git switch -c header</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git branch -m old new</p></td>
+<td><p>Rename a branch</p></td>
+<td><p>git branch -m header navbar</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git branch -d header</p></td>
+<td><p>Delete a merged local branch</p></td>
+<td><p>git branch -d header</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>git branch -D header</p></td>
+<td><p>Force-delete a local branch</p></td>
+<td><p>git branch -D header</p></td>
+</tr>
+<tr>
+<td><p>10</p></td>
+<td><p>git switch -</p></td>
+<td><p>Switch to the previous branch</p></td>
+<td><p>git switch -</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-push-branch">Push a New Branch to GitHub</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git push -u origin header</p></td>
+<td><p>Upload new branch</p></td>
+<td><p>git push -u origin header</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git push</p></td>
+<td><p>Push subsequent commits</p></td>
+<td><p>git push</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git branch -vv</p></td>
+<td><p>Show tracking information</p></td>
+<td><p>git branch -vv</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git push origin --delete header</p></td>
+<td><p>Delete remote branch</p></td>
+<td><p>git push origin --delete header</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-merge">Merge Branches</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git merge header</p></td>
+<td><p>Merge header into current branch</p></td>
+<td><p>git merge header</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git merge --no-ff header</p></td>
+<td><p>Create a merge commit</p></td>
+<td><p>git merge --no-ff header</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git merge --abort</p></td>
+<td><p>Cancel an ongoing conflicted merge</p></td>
+<td><p>git merge --abort</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git log --graph --oneline --all</p></td>
+<td><p>Display branch history graph</p></td>
+<td><p>git log --graph --oneline --all</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-conflicts">Resolve Merge Conflicts</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git status</p></td>
+<td><p>Show conflicted files</p></td>
+<td><p>git status</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git diff</p></td>
+<td><p>View conflict details</p></td>
+<td><p>git diff</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git add filename</p></td>
+<td><p>Mark resolved file</p></td>
+<td><p>git add index.html</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git commit</p></td>
+<td><p>Finish merge after resolution</p></td>
+<td><p>git commit</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git merge --abort</p></td>
+<td><p>Cancel the merge</p></td>
+<td><p>git merge --abort</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-amend">Modify and Update Commits</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git commit --amend --no-edit</p></td>
+<td><p>Add staged changes to latest commit without changing its message</p></td>
+<td><p>git commit --amend --no-edit</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git commit --amend -m "New message"</p></td>
+<td><p>Change latest commit message</p></td>
+<td><p>git commit --amend -m "Updated homepage"</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git rebase -i HEAD~3</p></td>
+<td><p>Interactively edit the last three commits</p></td>
+<td><p>git rebase -i HEAD~3</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git rebase --continue</p></td>
+<td><p>Continue an interactive rebase</p></td>
+<td><p>git rebase --continue</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git rebase --abort</p></td>
+<td><p>Cancel an interactive rebase</p></td>
+<td><p>git rebase --abort</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git rebase --skip</p></td>
+<td><p>Skip the current rebase commit</p></td>
+<td><p>git rebase --skip</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git switch --detach a1b2c3d</p></td>
+<td><p>Jump to a Specific Commit</p></td>
+<td><p>git switch --detach a1b2c3d(commit Id)</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-undo-files">Undo Changes in Files</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git restore filename</p></td>
+<td><p>Discard unstaged changes in a file</p></td>
+<td><p>git restore index.html</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git restore .</p></td>
+<td><p>Discard all unstaged changes in the current directory</p></td>
+<td><p>git restore .</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git restore --staged filename</p></td>
+<td><p>Unstage a file but keep its changes</p></td>
+<td><p>git restore --staged index.html</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git restore --source=HEAD filename</p></td>
+<td><p>Restore a file from the latest commit</p></td>
+<td><p>git restore --source=HEAD index.html</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git clean -n</p></td>
+<td><p>Preview untracked files that could be deleted</p></td>
+<td><p>git clean -n</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git clean -fd</p></td>
+<td><p>Delete untracked files and folders</p></td>
+<td><p>git clean -fd</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-undo-commits">Undo or Delete Commits</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git reset --soft HEAD~1</p></td>
+<td><p>Remove latest commit, keep changes staged</p></td>
+<td><p>git reset --soft HEAD~1</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git reset HEAD~1</p></td>
+<td><p>Remove latest commit, keep changes unstaged</p></td>
+<td><p>git reset HEAD~1</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git reset --hard HEAD~1</p></td>
+<td><p>Remove latest commit and discard tracked changes</p></td>
+<td><p>git reset --hard HEAD~1</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git revert HEAD</p></td>
+<td><p>Create a new commit that reverses latest commit</p></td>
+<td><p>git revert HEAD</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git revert COMMIT_ID</p></td>
+<td><p>Reverse a specific commit</p></td>
+<td><p>git revert a1b2c3d</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git reflog</p></td>
+<td><p>View movements of HEAD and recover commit references</p></td>
+<td><p>git reflog</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git reset --hard COMMIT_ID</p></td>
+<td><p>Move branch to a specific commit and discard tracked changes</p></td>
+<td><p>git reset --hard a1b2c3d</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-history">View and Analyze History</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git log</p></td>
+<td><p>Full commit history</p></td>
+<td><p>git log</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git log --oneline</p></td>
+<td><p>Compact history</p></td>
+<td><p>git log --oneline</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git log --oneline --all</p></td>
+<td><p>All branch histories</p></td>
+<td><p>git log --oneline --all</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git log --graph --oneline --all</p></td>
+<td><p>Visual commit graph</p></td>
+<td><p>git log --graph --oneline --all</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git show COMMIT_ID</p></td>
+<td><p>Display commit details</p></td>
+<td><p>git show a1b2c3d</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git log -p</p></td>
+<td><p>Show commit patches</p></td>
+<td><p>git log -p</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git log -- filename</p></td>
+<td><p>History of a file</p></td>
+<td><p>git log -- index.html</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git blame filename</p></td>
+<td><p>Show line-by-line commit information</p></td>
+<td><p>git blame index.html</p></td>
+</tr>
+<tr>
+<td><p>9</p></td>
+<td><p>git shortlog -sn</p></td>
+<td><p>Show commit counts by author</p></td>
+<td><p>git shortlog -sn</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-tags">Tags and Releases</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git tag</p></td>
+<td><p>Show tags</p></td>
+<td><p>git tag</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git tag v1.0.0</p></td>
+<td><p>Create a lightweight tag</p></td>
+<td><p>git tag v1.0.0</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git tag -a v1.0.0 -m "Release 1.0.0"</p></td>
+<td><p>Create an annotated tag</p></td>
+<td><p>git tag -a v1.0.0 -m "Release 1.0.0"</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git show v1.0.0</p></td>
+<td><p>View tag information</p></td>
+<td><p>git show v1.0.0</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git push origin v1.0.0</p></td>
+<td><p>Push one tag</p></td>
+<td><p>git push origin v1.0.0</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git push origin --tags</p></td>
+<td><p>Push all tags</p></td>
+<td><p>git push origin --tags</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git tag -d v1.0.0</p></td>
+<td><p>Delete local tag</p></td>
+<td><p>git tag -d v1.0.0</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git push origin --delete v1.0.0</p></td>
+<td><p>Delete remote tag</p></td>
+<td><p>git push origin --delete v1.0.0</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-delete-branch">Delete a GitHub Branch</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git branch -d header</p></td>
+<td><p>Delete local merged branch</p></td>
+<td><p>git branch -d header</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git branch -D header</p></td>
+<td><p>Force-delete local branch</p></td>
+<td><p>git branch -D header</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git push origin --delete header</p></td>
+<td><p>Delete remote GitHub branch</p></td>
+<td><p>git push origin --delete header</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git fetch --prune</p></td>
+<td><p>Clean deleted remote references</p></td>
+<td><p>git fetch --prune</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="anchor-target anchor-target" id="git-advanced">Useful Advanced Commands</h3><div class="index-back"><a href="#index-page">↑ Back to Index</a></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th><p>S. No.</p></th>
+<th><p>Command</p></th>
+<th><p>Description</p></th>
+<th><p>Example</p></th>
+</tr></thead>
+<tbody>
+<tr>
+<td><p>1</p></td>
+<td><p>git revert --no-edit HEAD</p></td>
+<td><p>Revert without opening the message editor</p></td>
+<td><p>git revert --no-edit HEAD</p></td>
+</tr>
+<tr>
+<td><p>2</p></td>
+<td><p>git merge --abort</p></td>
+<td><p>Cancel merge conflict resolution</p></td>
+<td><p>git merge --abort</p></td>
+</tr>
+<tr>
+<td><p>3</p></td>
+<td><p>git reset --merge</p></td>
+<td><p>Reset while preserving some local changes</p></td>
+<td><p>git reset --merge</p></td>
+</tr>
+<tr>
+<td><p>4</p></td>
+<td><p>git fsck</p></td>
+<td><p>Check repository object connectivity</p></td>
+<td><p>git fsck</p></td>
+</tr>
+<tr>
+<td><p>5</p></td>
+<td><p>git gc</p></td>
+<td><p>Perform repository housekeeping</p></td>
+<td><p>git gc</p></td>
+</tr>
+<tr>
+<td><p>6</p></td>
+<td><p>git remote show origin</p></td>
+<td><p>Display remote tracking details</p></td>
+<td><p>git remote show origin</p></td>
+</tr>
+<tr>
+<td><p>7</p></td>
+<td><p>git update-index --assume-unchanged filename</p></td>
+<td><p>Temporarily ignore local modifications to a tracked file</p></td>
+<td><p>git update-index --assume-unchanged config.local</p></td>
+</tr>
+<tr>
+<td><p>8</p></td>
+<td><p>git update-index --no-assume-unchanged filename</p></td>
+<td><p>Stop ignoring local modifications</p></td>
+<td><p>git update-index --no-assume-unchanged config.local</p></td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<footer id="page-footer"><span class="footer-title">Web Development &amp; Git Notes</span><span class="footer-page">Page <span>—</span></span></footer></body>
+</html>
