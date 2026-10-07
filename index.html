@@ -32,9 +32,14 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-  <style id="pro-keyword-highlight">
-.pro-keyword{color:#e87500!important;font-weight:800!important;text-shadow:0 1px 0 rgba(255,255,255,.45);}
-</style></head>
+    <style id="pro-keyword-highlight">
+      .pro-keyword {
+        color: #e82300 !important;
+        font-weight: 900 !important;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+      }
+    </style>
+  </head>
 
   <body>
     <!-- ==================================================
@@ -124,7 +129,8 @@
               >
 
               <a href=".\files\DSR_2023_Vol_1_2.html" target="_blank"
-                ><i class="fa-solid fa-arrows-rotate"></i> DSR 2023 <span class="pro-keyword">Pro</span></a
+                ><i class="fa-solid fa-arrows-rotate"></i> DSR 2023
+                <span class="pro-keyword">Pro</span></a
               >
             </div>
           </div>
@@ -146,7 +152,8 @@
                 ><i class="fa-solid fa-compass"></i> PAR Corr. Slips</a
               >
               <a href="#par-templates"
-                ><i class="fa-solid fa-file-pen"></i> PAR 2025 <span class="pro-keyword">Pro</span></a
+                ><i class="fa-solid fa-file-pen"></i> PAR 2025
+                <span class="pro-keyword">Pro</span></a
               >
             </div>
           </div>
@@ -205,7 +212,8 @@
                 ><i class="fa-solid fa-shield-heart"></i> SOP Corr. Slips</a
               >
               <a href="./files/SOP/SOP_2026 Pro.html" target="_blank"
-                ><i class="fa-solid fa-vest"></i> SOP 2026 <span class="pro-keyword">Pro</span></a
+                ><i class="fa-solid fa-vest"></i> SOP 2026
+                <span class="pro-keyword">Pro</span></a
               >
             </div>
           </div>
@@ -224,7 +232,8 @@
               <a
                 href="https://cpwd.gov.in/WriteReadData/Publication/GCC_CON_Misc_30_Construction_Works_2023.pdf"
                 target="_blank"
-                ><i class="fa-solid fa-gavel"></i> GCC Construction 2023 <span class="pro-keyword">Pro</span></a
+                ><i class="fa-solid fa-gavel"></i> GCC Construction 2023
+                <span class="pro-keyword">Pro</span></a
               >
               <a
                 href="https://cpwd.gov.in/WriteReadData/Publication/GCC_CON_Misc_29_Maintenance_Works_2023.pdf"
@@ -234,7 +243,8 @@
               <a
                 href="https://cpwd.gov.in/WriteReadData/Publication/GCC_CON_Misc_29_Maintenance_Works_2023.pdf"
                 target="_blank"
-                ><i class="fa-solid fa-section"></i> GCC Maintenance 2023 <span class="pro-keyword">Pro</span></a
+                ><i class="fa-solid fa-section"></i> GCC Maintenance 2023
+                <span class="pro-keyword">Pro</span></a
               >
               <a
                 href="https://cpwd.gov.in/WriteReadData/Publication/General_Conditions_of_Contract_2024_EPC_Projects.pdf"
@@ -277,11 +287,34 @@
           <!-- Search -->
           <form class="site-search" role="search" autocomplete="off">
             <label for="site-search-input">
-              <input id="site-search-input" type="search" placeholder="Search this page..." aria-label="Search all page content" aria-controls="site-search-results" aria-expanded="false" />
-              <button class="site-search-submit" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+              <input
+                id="site-search-input"
+                type="search"
+                placeholder="Search this page..."
+                aria-label="Search all page content"
+                aria-controls="site-search-results"
+                aria-expanded="false"
+              />
+              <button
+                class="site-search-submit"
+                type="submit"
+                aria-label="Search"
+              >
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              </button>
             </label>
-            <div class="site-search-results" id="site-search-results" role="listbox" aria-label="Search results" hidden></div>
-            <div class="site-search-status" aria-live="polite" aria-atomic="true"></div>
+            <div
+              class="site-search-results"
+              id="site-search-results"
+              role="listbox"
+              aria-label="Search results"
+              hidden
+            ></div>
+            <div
+              class="site-search-status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></div>
           </form>
         </div>
       </nav>
@@ -841,19 +874,36 @@
       let activeSearchIndex = -1;
 
       function getSearchableElements() {
-        const selectors = "a, button, h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, summary, span, small, strong, em, [role='heading']";
+        const selectors =
+          "a, button, h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, summary, span, small, strong, em, [role='heading']";
         const elements = new Set(document.querySelectorAll(selectors));
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const walker = document.createTreeWalker(
+          document.body,
+          NodeFilter.SHOW_TEXT,
+        );
         let textNode;
         while ((textNode = walker.nextNode())) {
           if (!textNode.nodeValue.trim()) continue;
           const parent = textNode.parentElement;
-          if (!parent || parent.closest(".site-search, script, style, noscript")) continue;
-          elements.add(parent.closest("a, button, h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, summary, [role='heading']") || parent);
+          if (
+            !parent ||
+            parent.closest(".site-search, script, style, noscript")
+          )
+            continue;
+          elements.add(
+            parent.closest(
+              "a, button, h1, h2, h3, h4, h5, h6, p, li, td, th, dt, dd, figcaption, summary, [role='heading']",
+            ) || parent,
+          );
         }
         return [...elements].filter((element) => {
-          if (element.closest(".site-search, script, style, noscript")) return false;
-          if (element.closest("a[href], button") && !element.matches("a[href], button")) return false;
+          if (element.closest(".site-search, script, style, noscript"))
+            return false;
+          if (
+            element.closest("a[href], button") &&
+            !element.matches("a[href], button")
+          )
+            return false;
           return (element.textContent || "").trim().length > 0;
         });
       }
@@ -878,8 +928,16 @@
         const seen = new Set();
         getSearchableElements().forEach((element) => {
           const text = (element.textContent || "").replace(/\s+/g, " ").trim();
-          const href = element.matches("a[href]") ? element.getAttribute("href") : "";
-          const extra = [element.getAttribute("aria-label"), element.getAttribute("title"), href].filter(Boolean).join(" ");
+          const href = element.matches("a[href]")
+            ? element.getAttribute("href")
+            : "";
+          const extra = [
+            element.getAttribute("aria-label"),
+            element.getAttribute("title"),
+            href,
+          ]
+            .filter(Boolean)
+            .join(" ");
           if (!(text + " " + extra).toLocaleLowerCase().includes(term)) return;
           const key = `${text.toLocaleLowerCase()}|${href}`;
           if (seen.has(key)) return;
@@ -887,8 +945,12 @@
           matches.push({ element, text: text || extra, href });
         });
         matches.sort((a, b) => {
-          const aRank = (a.text.toLocaleLowerCase().startsWith(term) ? 0 : 2) - (a.href ? 0.25 : 0);
-          const bRank = (b.text.toLocaleLowerCase().startsWith(term) ? 0 : 2) - (b.href ? 0.25 : 0);
+          const aRank =
+            (a.text.toLocaleLowerCase().startsWith(term) ? 0 : 2) -
+            (a.href ? 0.25 : 0);
+          const bRank =
+            (b.text.toLocaleLowerCase().startsWith(term) ? 0 : 2) -
+            (b.href ? 0.25 : 0);
           return aRank - bRank;
         });
 
@@ -901,7 +963,9 @@
         } else {
           const shown = matches;
           shown.forEach(({ element, text, href }, index) => {
-            const result = href ? document.createElement("a") : document.createElement("button");
+            const result = href
+              ? document.createElement("a")
+              : document.createElement("button");
             result.className = "site-search-result";
             result.setAttribute("role", "option");
             result.setAttribute("aria-selected", "false");
@@ -910,14 +974,18 @@
               result.href = href;
               const target = element.getAttribute("target");
               if (target) result.target = target;
-              if (element.getAttribute("rel")) result.rel = element.getAttribute("rel");
+              if (element.getAttribute("rel"))
+                result.rel = element.getAttribute("rel");
             } else {
               result.type = "button";
               result.addEventListener("click", () => {
                 closePageSearch();
                 element.scrollIntoView({ behavior: "smooth", block: "center" });
                 element.classList.add("search-result-highlight");
-                window.setTimeout(() => element.classList.remove("search-result-highlight"), 1800);
+                window.setTimeout(
+                  () => element.classList.remove("search-result-highlight"),
+                  1800,
+                );
               });
             }
             const snippet = document.createElement("span");
@@ -926,17 +994,27 @@
               const start = Math.max(0, matchAt - 48);
               const end = Math.min(text.length, start + 148);
               if (start > 0) snippet.append(document.createTextNode("…"));
-              snippet.append(document.createTextNode(text.slice(start, matchAt)));
+              snippet.append(
+                document.createTextNode(text.slice(start, matchAt)),
+              );
               const mark = document.createElement("mark");
               mark.textContent = text.slice(matchAt, matchAt + term.length);
-              snippet.append(mark, document.createTextNode(text.slice(matchAt + term.length, end)));
-              if (end < text.length) snippet.append(document.createTextNode("…"));
+              snippet.append(
+                mark,
+                document.createTextNode(text.slice(matchAt + term.length, end)),
+              );
+              if (end < text.length)
+                snippet.append(document.createTextNode("…"));
             } else {
-              snippet.textContent = text.length > 150 ? `${text.slice(0, 147)}…` : text;
+              snippet.textContent =
+                text.length > 150 ? `${text.slice(0, 147)}…` : text;
             }
             result.append(snippet);
             if (element.matches("a[href]") && element.closest(".nav-item")) {
-              const parentLabel = element.closest(".nav-item").querySelector(":scope > .nav-trigger")?.innerText.trim();
+              const parentLabel = element
+                .closest(".nav-item")
+                .querySelector(":scope > .nav-trigger")
+                ?.innerText.trim();
               if (parentLabel) {
                 const group = document.createElement("small");
                 group.textContent = parentLabel;
@@ -951,30 +1029,50 @@
         pageSearchInput.setAttribute("aria-expanded", "true");
       }
 
-      pageSearchInput.addEventListener("input", () => searchPage(pageSearchInput.value));
+      pageSearchInput.addEventListener("input", () =>
+        searchPage(pageSearchInput.value),
+      );
       pageSearch.addEventListener("submit", (event) => {
         event.preventDefault();
         if (pageSearchResults.hidden) searchPage(pageSearchInput.value);
-        const firstResult = pageSearchResults.querySelector(".site-search-result");
+        const firstResult = pageSearchResults.querySelector(
+          ".site-search-result",
+        );
         if (firstResult) firstResult.click();
       });
       pageSearchInput.addEventListener("keydown", (event) => {
-        const results = [...pageSearchResults.querySelectorAll(".site-search-result")];
+        const results = [
+          ...pageSearchResults.querySelectorAll(".site-search-result"),
+        ];
         if (event.key === "Escape") {
           closePageSearch();
           pageSearchInput.blur();
-        } else if ((event.key === "ArrowDown" || event.key === "ArrowUp") && results.length) {
+        } else if (
+          (event.key === "ArrowDown" || event.key === "ArrowUp") &&
+          results.length
+        ) {
           event.preventDefault();
-          activeSearchIndex = (activeSearchIndex + (event.key === "ArrowDown" ? 1 : -1) + results.length) % results.length;
+          activeSearchIndex =
+            (activeSearchIndex +
+              (event.key === "ArrowDown" ? 1 : -1) +
+              results.length) %
+            results.length;
           results[activeSearchIndex].focus();
         }
       });
       pageSearchResults.addEventListener("keydown", (event) => {
-        const results = [...pageSearchResults.querySelectorAll(".site-search-result")];
+        const results = [
+          ...pageSearchResults.querySelectorAll(".site-search-result"),
+        ];
         const current = results.indexOf(document.activeElement);
-        if ((event.key === "ArrowDown" || event.key === "ArrowUp") && results.length) {
+        if (
+          (event.key === "ArrowDown" || event.key === "ArrowUp") &&
+          results.length
+        ) {
           event.preventDefault();
-          const nextIndex = (current + (event.key === "ArrowDown" ? 1 : -1) + results.length) % results.length;
+          const nextIndex =
+            (current + (event.key === "ArrowDown" ? 1 : -1) + results.length) %
+            results.length;
           results[nextIndex].focus();
         } else if (event.key === "Escape") {
           closePageSearch();
