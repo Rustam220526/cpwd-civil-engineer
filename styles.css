@@ -49,6 +49,8 @@ main {
 .brand img {
   width: 49px;
   height: 49px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* =========================================================
@@ -788,7 +790,9 @@ footer {
 
 .footer-logo {
   color: #fff;
-  font: 700 21px "Playfair Display", serif;
+  font:
+    700 21px "Playfair Display",
+    serif;
   text-decoration: none;
 }
 
@@ -835,7 +839,9 @@ footer {
   border-radius: 50%;
   color: #fff;
   text-decoration: none;
-  transition: background 0.18s ease, border-color 0.18s ease;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .footer-social-links a:hover,
