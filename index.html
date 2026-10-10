@@ -288,8 +288,8 @@
               <input
                 id="site-search-input"
                 type="search"
-                placeholder="Search this page..."
-                aria-label="Search all page content"
+                placeholder="Search all documents and pages..."
+                aria-label="Search all site content"
                 aria-controls="site-search-results"
                 aria-expanded="false"
               />
@@ -864,12 +864,43 @@
     </footer>
 
     <script>
-      // Search page text, including nested and currently collapsed navigation links.
+      // Search the landing page and every published HTML document.
       const pageSearch = document.querySelector(".site-search");
       const pageSearchInput = document.querySelector("#site-search-input");
       const pageSearchResults = document.querySelector("#site-search-results");
       const pageSearchStatus = document.querySelector(".site-search-status");
       let activeSearchIndex = -1;
+      const searchableFiles = [
+        { path: "files/Manual/Work Manual 2026 Pro.html", name: "Work Manual 2026 Pro" },
+        { path: "files/SOP/SOP_2026 Pro.html", name: "SOP 2026 Pro" },
+        { path: "files/SOP/Technical Staff Requirement.html", name: "Technical Staff Requirement" },
+        { path: "files/SOP/Extra Item and Deviation.html", name: "Extra Item and Deviation" },
+        { path: "files/SOP/Departmental Charges.html", name: "Departmental Charges" },
+        { path: "files/SOP/Annexure 66A Part 1.html", name: "Annexure 66A Part 1" },
+        { path: "files/SOP/Annexure 66A Part 2.html", name: "Annexure 66A Part 2" },
+        { path: "files/PAR/PAR 2025 Pro.html", name: "PAR 2025 Pro" },
+        { path: "files/DSR/DSR_2023_Vol_1_2.html", name: "DSR 2023 Vol 1 & 2" },
+        { path: "files/Others/Web Dev Notes.html", name: "Web Dev Notes" },
+      ];
+      let documentIndexPromise;
+
+      function loadDocumentIndex() {
+        if (!documentIndexPromise) {
+          documentIndexPromise = Promise.all(
+            searchableFiles.map(async (file) => {
+              const response = await fetch(file.path);
+              if (!response.ok) throw new Error(`Could not load ${file.path}`);
+              const html = await response.text();
+              const parsed = new DOMParser().parseFromString(html, "text/html");
+              const blocks = [...parsed.body.querySelectorAll(
+                "h1,h2,h3,h4,h5,h6,p,li,td,th,dt,dd,figcaption,summary,[role='heading']",
+              )].filter((el) => !el.closest("script,style,noscript"));
+              return { ...file, blocks };
+            }),
+          );
+        }
+        return documentIndexPromise;
+      }
 
       function getSearchableElements() {
         const selectors =
@@ -912,7 +943,14 @@
         activeSearchIndex = -1;
       }
 
-      function searchPage(query) {
+      function addSearchDestination(href, query) {
+        const destination = new URL(href, window.location.href);
+        if (destination.origin === window.location.origin)
+          destination.searchParams.set("siteSearch", query);
+        return destination.href;
+      }
+
+      async function searchPage(query) {
         const term = query.trim().toLocaleLowerCase();
         pageSearchResults.replaceChildren();
         activeSearchIndex = -1;
@@ -922,6 +960,10 @@
           return;
         }
 
+        pageSearchResults.hidden = false;
+        pageSearchInput.setAttribute("aria-expanded", "true");
+        pageSearchStatus.textContent = "Searching site documents…";
+        const requestQuery = query.trim();
         const matches = [];
         const seen = new Set();
         getSearchableElements().forEach((element) => {
@@ -940,15 +982,35 @@
           const key = `${text.toLocaleLowerCase()}|${href}`;
           if (seen.has(key)) return;
           seen.add(key);
+          if (!href && !element.id)
+            element.id = `site-search-result-${matches.length + 1}`;
           matches.push({ element, text: text || extra, href });
         });
+        try {
+          const documents = await loadDocumentIndex();
+          if (pageSearchInput.value.trim() !== requestQuery) return;
+          documents.forEach((file) => file.blocks.forEach((block) => {
+            const text = (block.innerText || block.textContent || "").replace(/\s+/g, " ").trim();
+            if (!text.toLocaleLowerCase().includes(term)) return;
+            const target = block.closest("[id]") || block;
+            const key = `${file.path}|${target.id || text.toLocaleLowerCase()}`;
+            if (seen.has(key)) return;
+            seen.add(key);
+            matches.push({ text, href: `${file.path}${target.id ? `#${encodeURIComponent(target.id)}` : ""}`, file: file.name });
+          }));
+        } catch (error) {
+          pageSearchResults.replaceChildren();
+          const failed = document.createElement("div");
+          failed.className = "site-search-empty";
+          failed.textContent = "Site search could not load the document files. Open this site through its web server and try again.";
+          pageSearchResults.append(failed);
+          pageSearchStatus.textContent = "Document search unavailable.";
+          return;
+        }
+        if (pageSearchInput.value.trim() !== requestQuery) return;
         matches.sort((a, b) => {
-          const aRank =
-            (a.text.toLocaleLowerCase().startsWith(term) ? 0 : 2) -
-            (a.href ? 0.25 : 0);
-          const bRank =
-            (b.text.toLocaleLowerCase().startsWith(term) ? 0 : 2) -
-            (b.href ? 0.25 : 0);
+          const aRank = a.text.toLocaleLowerCase().startsWith(term) ? 0 : 2;
+          const bRank = b.text.toLocaleLowerCase().startsWith(term) ? 0 : 2;
           return aRank - bRank;
         });
 
@@ -960,31 +1022,21 @@
           pageSearchStatus.textContent = "No search results.";
         } else {
           const shown = matches;
-          shown.forEach(({ element, text, href }, index) => {
-            const result = href
-              ? document.createElement("a")
-              : document.createElement("button");
+          shown.forEach(({ text, href, file }, index) => {
+            const result = document.createElement("a");
             result.className = "site-search-result";
+            result.target = "_blank";
+            result.rel = "noopener noreferrer";
             result.setAttribute("role", "option");
             result.setAttribute("aria-selected", "false");
             result.dataset.searchIndex = String(index);
             if (href) {
-              result.href = href;
-              const target = element.getAttribute("target");
-              if (target) result.target = target;
-              if (element.getAttribute("rel"))
-                result.rel = element.getAttribute("rel");
+              result.href = addSearchDestination(href, query.trim());
             } else {
-              result.type = "button";
-              result.addEventListener("click", () => {
-                closePageSearch();
-                element.scrollIntoView({ behavior: "smooth", block: "center" });
-                element.classList.add("search-result-highlight");
-                window.setTimeout(
-                  () => element.classList.remove("search-result-highlight"),
-                  1800,
-                );
-              });
+              result.href = addSearchDestination(
+                `#${encodeURIComponent(element.id)}`,
+                query.trim(),
+              );
             }
             const snippet = document.createElement("span");
             const matchAt = text.toLocaleLowerCase().indexOf(term);
@@ -1008,17 +1060,9 @@
                 text.length > 150 ? `${text.slice(0, 147)}…` : text;
             }
             result.append(snippet);
-            if (element.matches("a[href]") && element.closest(".nav-item")) {
-              const parentLabel = element
-                .closest(".nav-item")
-                .querySelector(":scope > .nav-trigger")
-                ?.innerText.trim();
-              if (parentLabel) {
-                const group = document.createElement("small");
-                group.textContent = parentLabel;
-                result.append(group);
-              }
-            }
+            const group = document.createElement("small");
+            group.textContent = file || "Home page";
+            result.append(group);
             pageSearchResults.append(result);
           });
           pageSearchStatus.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"}.`;
@@ -1030,9 +1074,9 @@
       pageSearchInput.addEventListener("input", () =>
         searchPage(pageSearchInput.value),
       );
-      pageSearch.addEventListener("submit", (event) => {
+      pageSearch.addEventListener("submit", async (event) => {
         event.preventDefault();
-        if (pageSearchResults.hidden) searchPage(pageSearchInput.value);
+        await searchPage(pageSearchInput.value);
         const firstResult = pageSearchResults.querySelector(
           ".site-search-result",
         );
@@ -1207,5 +1251,6 @@
       carousel.addEventListener("focusout", startAutoSlide);
       startAutoSlide();
     </script>
-  </body>
+      <script src="site-search.js"></script>
+</body>
 </html>
