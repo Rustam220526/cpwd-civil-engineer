@@ -2232,7 +2232,7 @@
   </head>
   <body bgcolor="#eef2f7" link="blue" vlink="blue"><nav class="part-navigation" aria-label="Manual parts">
   <button class="part-menu-toggle" type="button" aria-expanded="false" aria-controls="part-navigation-links">
-    <span class="part-menu-icon" aria-hidden="true">☰</span><span>Parts</span>
+    <span class="part-menu-icon" aria-hidden="true">☰</span><span>Work Manual 2026</span>
   </button>
   <div class="part-navigation-links" id="part-navigation-links">
     <a class="part-navigation-button" href="#index-part-i">PART I : FUNCTIONS, FUNDS, BUDGET AND ACCOUNTS</a>
@@ -63363,15 +63363,17 @@
     if(!nav)return;
     var toggle=nav.querySelector('.part-menu-toggle');
     var links=nav.querySelectorAll('.part-navigation-button');
+    function closeMenu(){toggle.setAttribute('aria-expanded','false');nav.classList.remove('menu-open');}
     toggle.addEventListener('click',function(){
       var open=toggle.getAttribute('aria-expanded')!=='true';
       toggle.setAttribute('aria-expanded',String(open));
       nav.classList.toggle('menu-open',open);
     });
-    links.forEach(function(link){link.addEventListener('click',function(){
-      toggle.setAttribute('aria-expanded','false');
-      nav.classList.remove('menu-open');
-    });});
+    links.forEach(function(link){link.addEventListener('click',closeMenu);});
+    document.addEventListener('click',function(event){
+      if(toggle.getAttribute('aria-expanded')==='true' && !nav.contains(event.target))closeMenu();
+    });
+    document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMenu();});
   })();
 </script><style id="part-navigation-button-theme">
   .part-navigation-button,
@@ -63409,5 +63411,20 @@
     #work-manual-index-table tr.part-row td { padding: 11px 9px !important; }
     .part-row-title { font-size: 12px; }
   }
+</style><style id="part-navigation-full-width-mobile">
+  @media(max-width:700px) {
+    .part-navigation { width: 100%; box-sizing: border-box; }
+    .part-menu-toggle { display: flex; width: 100%; min-height: 44px; box-sizing: border-box; justify-content: center; }
+  }
+</style><style id="part-navigation-fixed-position">
+  .part-navigation {
+    position: fixed !important;
+    top: 46px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1100 !important;
+  }
+  body { padding-top: 106px !important; }
 </style></body>
 </html>
