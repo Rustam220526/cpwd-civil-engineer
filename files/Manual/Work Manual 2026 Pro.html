@@ -386,12 +386,6 @@
           form.addEventListener("submit", function (e) {
             e.preventDefault();
             runSearch();
-            var first = rows.find(function (r) {
-              return r.style.display !== "none" && r.querySelector("a[href]");
-            });
-            if (first) {
-              first.scrollIntoView({ behavior: "smooth", block: "nearest" });
-            }
           });
         }
       });
@@ -2276,11 +2270,7 @@
       <a class="cover-index-btn" href="#manual-index">Explore the Index ↓</a>
     </section>
     <section class="index-dashboard" id="manual-index">
-      <div class="section-eyebrow">CPWD WORKS MANUAL 2026</div>
-      <h1>Contents &amp; Index</h1>
-      <p class="index-intro">
-        Select any chapter or topic to jump directly to the relevant page.
-      </p>
+      <div class="index-search-stage">
       <div class="index-tools">
         <form class="manual-search-form" id="manualSearchForm" role="search">
           <span aria-hidden="true" class="manual-search-icon">⌕</span
@@ -2307,6 +2297,7 @@
           </button>
         </form>
         <span id="indexCount">234 entries</span>
+      </div>
       </div>
       <div class="index-table-wrap">
         <table class="index-table" id="work-manual-index-table">
@@ -63130,7 +63121,10 @@
             results.id = "fullDocumentSearchResults";
             results.setAttribute("aria-live", "polite");
             var tools = form.parentElement;
-            if (tools && tools.parentElement)
+            var stage = tools && tools.parentElement;
+            if (stage && stage.classList.contains("index-search-stage"))
+              stage.parentElement.insertBefore(results, stage.nextSibling);
+            else if (tools && tools.parentElement)
               tools.parentElement.insertBefore(results, tools.nextSibling);
           }
           var rows = Array.from(table.querySelectorAll("tbody tr"));
@@ -63261,9 +63255,6 @@
           form.addEventListener("submit", function (e) {
             e.preventDefault();
             run();
-            var first = results.querySelector("a[data-fds-target]");
-            if (first)
-              results.scrollIntoView({ behavior: "smooth", block: "start" });
           });
           results.addEventListener("click", function (e) {
             var a = e.target.closest("a[data-fds-target]");
@@ -63458,5 +63449,53 @@
     }
     .part-menu-icon { font-size: 25px !important; }
   }
+</style><style id="index-search-stage-centering">
+  #manual-index {
+    width: min(100%, 1120px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .index-search-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 190px;
+    width: min(100%, 900px);
+    box-sizing: border-box;
+    margin: 0 auto 22px;
+    padding: 24px clamp(12px, 3vw, 32px);
+    border: 1px solid #d6e5ef;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #f1f7fc 0%, #e9f3f8 52%, #f7f9fc 100%);
+    box-shadow: 0 10px 28px rgba(18, 54, 83, .09), inset 0 1px 0 #fff;
+  }
+  .index-search-stage .index-tools {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 780px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .index-search-stage .manual-search-form { width: min(100%, 760px) !important; }
+  @media(max-width:700px) {
+    .index-search-stage {
+      min-height: 155px;
+      width: 100%;
+      margin-bottom: 16px;
+      padding: 18px 12px;
+      border-radius: 14px;
+    }
+    .index-search-stage .manual-search-form { width: 100% !important; }
+  }
+</style><style id="stable-index-search-layout">
+  body, #manual-index, .index-search-stage, .index-tools, .index-table-wrap {
+    overflow-anchor: none !important;
+  }
+  .index-search-stage { height: 190px; }
+  @media(max-width:700px) { .index-search-stage { height: 155px; } }
 </style></body>
 </html>
