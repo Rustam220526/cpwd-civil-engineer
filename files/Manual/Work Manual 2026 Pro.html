@@ -2,6 +2,15 @@
 
 <html lang="" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
   <head>
+<script id="manual-content-load-guard">
+  document.documentElement.classList.add('manual-content-pending');
+  window.addEventListener('load',function(){document.documentElement.classList.remove('manual-content-pending');},{once:true});
+  window.addEventListener('pageshow',function(){document.documentElement.classList.remove('manual-content-pending');},{once:true});
+  window.setTimeout(function(){document.documentElement.classList.remove('manual-content-pending');},10000);
+</script>
+<style id="manual-content-load-guard-style">
+  html.manual-content-pending body > .page-shell { visibility: hidden !important; }
+</style>
     <title>/mnt/data/wm_extract/workmanual</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta content="pdftohtml 0.36" name="generator" />
@@ -2229,7 +2238,17 @@
         }
       }
     </style>
-  </head>
+  <script id="manual-refresh-start-position">
+  (function(){
+    var entries=performance.getEntriesByType ? performance.getEntriesByType('navigation') : [];
+    var isReload=entries.length && entries[0].type==='reload';
+    if(isReload){
+      if ('scrollRestoration' in history) history.scrollRestoration='manual';
+      if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+      window.scrollTo(0,0);
+    }
+  })();
+</script></head>
   <body bgcolor="#eef2f7" link="blue" vlink="blue"><nav class="part-navigation" aria-label="Manual parts">
   <button class="part-menu-toggle" type="button" aria-expanded="false" aria-controls="part-navigation-links">
     <span class="part-menu-icon" aria-hidden="true">☰</span><span>Work Manual 2026</span>
