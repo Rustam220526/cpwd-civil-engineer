@@ -180,10 +180,10 @@
                 Manual 2023</a
               >
               <a
-                href="https://cpwd.gov.in/WriteReadData/Publication/CPWD_Works_Manual_2026.pdf"
+                href="./files/Manual/Maintenance Manual 2023 Pro.html"
                 target="_blank"
                 ><i class="fa-solid fa-helmet-safety"></i> Maintenance Manual
-                2026 <span class="pro-keyword">Pro</span></a
+                2023 <span class="pro-keyword">Pro</span></a
               >
               <a
                 href="https://cpwd.gov.in/AllCirculars.aspx?Type=25"
@@ -871,13 +871,31 @@
       const pageSearchStatus = document.querySelector(".site-search-status");
       let activeSearchIndex = -1;
       const searchableFiles = [
-        { path: "files/Manual/Work Manual 2026 Pro.html", name: "Work Manual 2026 Pro" },
+        {
+          path: "files/Manual/Work Manual 2026 Pro.html",
+          name: "Work Manual 2026 Pro",
+        },
         { path: "files/SOP/SOP_2026 Pro.html", name: "SOP 2026 Pro" },
-        { path: "files/SOP/Technical Staff Requirement.html", name: "Technical Staff Requirement" },
-        { path: "files/SOP/Extra Item and Deviation.html", name: "Extra Item and Deviation" },
-        { path: "files/SOP/Departmental Charges.html", name: "Departmental Charges" },
-        { path: "files/SOP/Annexure 66A Part 1.html", name: "Annexure 66A Part 1" },
-        { path: "files/SOP/Annexure 66A Part 2.html", name: "Annexure 66A Part 2" },
+        {
+          path: "files/SOP/Technical Staff Requirement.html",
+          name: "Technical Staff Requirement",
+        },
+        {
+          path: "files/SOP/Extra Item and Deviation.html",
+          name: "Extra Item and Deviation",
+        },
+        {
+          path: "files/SOP/Departmental Charges.html",
+          name: "Departmental Charges",
+        },
+        {
+          path: "files/SOP/Annexure 66A Part 1.html",
+          name: "Annexure 66A Part 1",
+        },
+        {
+          path: "files/SOP/Annexure 66A Part 2.html",
+          name: "Annexure 66A Part 2",
+        },
         { path: "files/PAR/PAR 2025 Pro.html", name: "PAR 2025 Pro" },
         { path: "files/DSR/DSR_2023_Vol_1_2.html", name: "DSR 2023 Vol 1 & 2" },
         { path: "files/Others/Web Dev Notes.html", name: "Web Dev Notes" },
@@ -892,9 +910,11 @@
               if (!response.ok) throw new Error(`Could not load ${file.path}`);
               const html = await response.text();
               const parsed = new DOMParser().parseFromString(html, "text/html");
-              const blocks = [...parsed.body.querySelectorAll(
-                "h1,h2,h3,h4,h5,h6,p,li,td,th,dt,dd,figcaption,summary,[role='heading']",
-              )].filter((el) => !el.closest("script,style,noscript"));
+              const blocks = [
+                ...parsed.body.querySelectorAll(
+                  "h1,h2,h3,h4,h5,h6,p,li,td,th,dt,dd,figcaption,summary,[role='heading']",
+                ),
+              ].filter((el) => !el.closest("script,style,noscript"));
               return { ...file, blocks };
             }),
           );
@@ -989,20 +1009,29 @@
         try {
           const documents = await loadDocumentIndex();
           if (pageSearchInput.value.trim() !== requestQuery) return;
-          documents.forEach((file) => file.blocks.forEach((block) => {
-            const text = (block.innerText || block.textContent || "").replace(/\s+/g, " ").trim();
-            if (!text.toLocaleLowerCase().includes(term)) return;
-            const target = block.closest("[id]") || block;
-            const key = `${file.path}|${target.id || text.toLocaleLowerCase()}`;
-            if (seen.has(key)) return;
-            seen.add(key);
-            matches.push({ text, href: `${file.path}${target.id ? `#${encodeURIComponent(target.id)}` : ""}`, file: file.name });
-          }));
+          documents.forEach((file) =>
+            file.blocks.forEach((block) => {
+              const text = (block.innerText || block.textContent || "")
+                .replace(/\s+/g, " ")
+                .trim();
+              if (!text.toLocaleLowerCase().includes(term)) return;
+              const target = block.closest("[id]") || block;
+              const key = `${file.path}|${target.id || text.toLocaleLowerCase()}`;
+              if (seen.has(key)) return;
+              seen.add(key);
+              matches.push({
+                text,
+                href: `${file.path}${target.id ? `#${encodeURIComponent(target.id)}` : ""}`,
+                file: file.name,
+              });
+            }),
+          );
         } catch (error) {
           pageSearchResults.replaceChildren();
           const failed = document.createElement("div");
           failed.className = "site-search-empty";
-          failed.textContent = "Site search could not load the document files. Open this site through its web server and try again.";
+          failed.textContent =
+            "Site search could not load the document files. Open this site through its web server and try again.";
           pageSearchResults.append(failed);
           pageSearchStatus.textContent = "Document search unavailable.";
           return;
@@ -1251,6 +1280,6 @@
       carousel.addEventListener("focusout", startAutoSlide);
       startAutoSlide();
     </script>
-      <script src="site-search.js"></script>
-</body>
+    <script src="site-search.js"></script>
+  </body>
 </html>
