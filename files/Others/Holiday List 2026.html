@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Public and restricted holidays for the calendar year 2026 for Central Government offices in Maharashtra.">
+<title>Holiday List 2026 — Maharashtra</title>
+<style>
+  :root {
+    --ink: #202a35;
+    --blue: #174a70;
+    --blue-light: #eaf3f9;
+    --line: #58636d;
+    --paper: #fff;
+    --page-bg: #edf2f6;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--page-bg);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    padding: .75rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid #d4dfe7;
+    box-shadow: 0 2px 8px #19354a12;
+  }
+  .topbar a {
+    display: inline-block;
+    padding: .5rem .85rem;
+    color: #fff;
+    background: var(--blue);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 700;
+  }
+  .topbar a:hover, .topbar a:focus { background: #0d3554; }
+  main { width: min(100% - 28px, 960px); margin: 1.25rem auto 2rem; }
+  .document-page {
+    margin: 0 auto 1.5rem;
+    padding: clamp(1rem, 4vw, 2.3rem);
+    background: var(--paper);
+    border: 1px solid #d8e0e6;
+    box-shadow: 0 4px 16px #19354a0d;
+    scroll-margin-top: 85px;
+  }
+  .annexure {
+    margin: 0;
+    text-align: center;
+    font-size: 1.08rem;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  h1, h2 {
+    color: #111;
+    text-align: center;
+    font-size: clamp(.95rem, 2.5vw, 1.13rem);
+    line-height: 1.35;
+    margin: .55rem 0 1rem;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  .table-wrap { width: 100%; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: .95rem;
+    color: #171717;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: .28rem .42rem;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+  }
+  thead th {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #174a70, #2878a8);
+    border-color: #174a70;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  tbody tr:nth-child(odd) { background: #ffffff; }
+  tbody tr:nth-child(even) { background: #eaf3f9; }
+  tbody tr {
+    transition: background-color .18s ease, box-shadow .18s ease, transform .18s ease;
+  }
+  tbody tr:hover {
+    background: #fff0cf;
+    box-shadow: inset 4px 0 0 #e69a2d;
+  }
+  tbody tr:hover td { border-color: #d9a64f; }
+  tbody td:nth-child(1), tbody td:nth-child(3), tbody td:nth-child(4) { text-align: center; }
+  tbody tr:focus-within {
+    background: #fff0cf;
+    outline: 2px solid #e69a2d;
+    outline-offset: -2px;
+  }
+  .public-table col:nth-child(1) { width: 10%; }
+  .public-table col:nth-child(2) { width: 50%; }
+  .public-table col:nth-child(3) { width: 20%; }
+  .public-table col:nth-child(4) { width: 20%; }
+  .restricted-table col:nth-child(1) { width: 10%; }
+  .restricted-table col:nth-child(2) { width: 48%; }
+  .restricted-table col:nth-child(3) { width: 20%; }
+  .restricted-table col:nth-child(4) { width: 22%; }
+  .note {
+    margin: .8rem 0 0;
+    font-weight: 700;
+    font-size: .9rem;
+  }
+  .signature {
+    margin: 1.7rem 0 0 auto;
+    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+    font-size: .92rem;
+  }
+  .page-label {
+    margin-top: 1.3rem;
+    text-align: right;
+    color: #5c6670;
+    font-size: .78rem;
+  }
+  @media (max-width: 600px) {
+    main { width: calc(100% - 16px); margin-top: .5rem; }
+    .document-page { padding: .65rem; margin-bottom: .75rem; }
+    table { font-size: .76rem; }
+    th, td { padding: .25rem .2rem; }
+    .public-table col:nth-child(1), .restricted-table col:nth-child(1) { width: 9%; }
+    .public-table col:nth-child(2) { width: 47%; }
+    .public-table col:nth-child(3) { width: 23%; }
+    .public-table col:nth-child(4) { width: 21%; }
+    .restricted-table col:nth-child(2) { width: 47%; }
+    .restricted-table col:nth-child(3) { width: 23%; }
+    .restricted-table col:nth-child(4) { width: 21%; }
+    .note { font-size: .78rem; }
+    .signature { font-size: .8rem; }
+  }
+  @media print {
+    body { background: #fff; }
+    .topbar { display: none; }
+    main { width: 100%; margin: 0; }
+    .document-page { box-shadow: none; border: 0; margin: 0; page-break-after: always; }
+    .document-page:last-child { page-break-after: auto; }
+  }
+</style>
+</head>
+<body>
+<nav class="topbar" aria-label="Document navigation">
+  <a href="#public-holidays">Public Holidays</a>
+  <a href="#restricted-holidays">Restricted Holidays</a>
+</nav>
+
+<main>
+  <section class="document-page" id="public-holidays">
+    <p class="annexure">Annexure – I</p>
+    <h1>LIST OF PUBLIC HOLIDAYS DURING THE CALENDAR YEAR 2026 FOR<br>CENTRAL GOVERNMENT OFFICES IN THE STATE OF MAHARASHTRA</h1>
+    <div class="table-wrap">
+      <table class="public-table">
+        <colgroup><col><col><col><col></colgroup>
+        <thead><tr><th>S. No.</th><th>Holiday</th><th>Date</th><th>Day</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Republic Day</td><td>26.01.2026</td><td>Monday</td></tr>
+          <tr><td>2</td><td>Holi (Dhulivandan)</td><td>03.03.2026</td><td>Tuesday</td></tr>
+          <tr><td>3</td><td>Gudi Padava</td><td>19.03.2026</td><td>Thursday</td></tr>
+          <tr><td>4</td><td>Id-ul-Fitr(Ramzan Id)</td><td>21.03.2026*</td><td>Saturday</td></tr>
+          <tr><td>5</td><td>Mahavir Jayanti</td><td>31.03.2026</td><td>Tuesday</td></tr>
+          <tr><td>6</td><td>Good Friday</td><td>03.04.2026</td><td>Friday</td></tr>
+          <tr><td>7</td><td>Buddha Purnima</td><td>01.05.2026</td><td>Friday</td></tr>
+          <tr><td>8</td><td>Id-ul-Zuha(Bakri Id)</td><td>27.05.2026*</td><td>Wednesday</td></tr>
+          <tr><td>9</td><td>Muharram</td><td>26.06.2026*</td><td>Friday</td></tr>
+          <tr><td>10</td><td>Independence Day</td><td>15.08.2026</td><td>Saturday</td></tr>
+          <tr><td>11</td><td>Id-e-Milad (Birthday of Prophet Mohammad)</td><td>26.08.2026*</td><td>Wednesday</td></tr>
+          <tr><td>12</td><td>Ganesh Chaturthi/Vinayak Chaturthi</td><td>14.09.2026</td><td>Monday</td></tr>
+          <tr><td>13</td><td>Mahatma Gandhi's Birthday</td><td>02.10.2026</td><td>Friday</td></tr>
+          <tr><td>14</td><td>Dussehra (Vijayadashmi)</td><td>20.10.2026</td><td>Tuesday</td></tr>
+          <tr><td>15</td><td>Diwali (Deepavali)</td><td>08.11.2026</td><td>Sunday</td></tr>
+          <tr><td>16</td><td>Guru Nanak's Birthday</td><td>24.11.2026</td><td>Tuesday</td></tr>
+          <tr><td>17</td><td>Christmas Day</td><td>25.12.2026</td><td>Friday</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">* Based on holiday declared by Central Government and would be subject to change as per decision of Government of Maharashtra.</p>
+    <div class="signature">(Vimal Bidwai)<br>Jt. Secretary, CGEWCC,<br>Mumbai.</div>
+    <p class="page-label">1 | Page</p>
+  </section>
+
+  <section class="document-page" id="restricted-holidays">
+    <p class="annexure">Annexure – II</p>
+    <h2>RESTRICTED HOLIDAYS FOR THE YEAR 2026 TO BE OBSERVED BY CENTRAL<br>GOVERNMENT OFFICES IN THE STATE OF MAHARASHTRA</h2>
+    <div class="table-wrap">
+      <table class="restricted-table">
+        <colgroup><col><col><col><col></colgroup>
+        <thead><tr><th>S. No.</th><th>Name of the Holiday</th><th>Date</th><th>Day</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>New Year's Day</td><td>01.01.2026</td><td>Thursday</td></tr>
+          <tr><td>2</td><td>Lohri</td><td>13.01.2026</td><td>Tuesday</td></tr>
+          <tr><td>3</td><td>Makar Sankranti, Magha Bihu/Pongal</td><td>14.01.2026</td><td>Wednesday</td></tr>
+          <tr><td>4</td><td>Guru Gobind Singh's Birthday</td><td>20.01.2026</td><td>Tuesday</td></tr>
+          <tr><td>5</td><td>Ganesh Jayanti</td><td>22.01.2026</td><td>Thursday</td></tr>
+          <tr><td>6</td><td>Basant Panchami/Sri Panchami</td><td>23.01.2026</td><td>Friday</td></tr>
+          <tr><td>7</td><td>Guru Ravidas's Birthday</td><td>01.02.2026</td><td>Sunday</td></tr>
+          <tr><td>8</td><td>Swami Dayanand Saraswati Jayanti</td><td>12.02.2026</td><td>Thursday</td></tr>
+          <tr><td>9</td><td>Mahashivratri</td><td>15.02.2026</td><td>Sunday</td></tr>
+          <tr><td>10</td><td>Chhatrapati Shivaji Maharaj Jayanti</td><td>19.02.2026</td><td>Thursday</td></tr>
+          <tr><td>11</td><td>Holika Dahan</td><td>02.03.2026</td><td>Monday</td></tr>
+          <tr><td>12</td><td>Sahadat-e-Hazrat Ali</td><td>11.03.2026</td><td>Wednesday</td></tr>
+          <tr><td>13</td><td>Jamat-Ul-Vida</td><td>20.03.2026</td><td>Friday</td></tr>
+          <tr><td>14</td><td>Ram Navami</td><td>26.03.2026</td><td>Thursday</td></tr>
+          <tr><td>15</td><td>Pesah (Jew), Hanuman Jayanti</td><td>02.04.2026</td><td>Thursday</td></tr>
+          <tr><td>16</td><td>Easter Sunday</td><td>05.04.2026</td><td>Sunday</td></tr>
+          <tr><td>17</td><td>Vaishakhi, Vishu, Meshadi</td><td>14.04.2026</td><td>Tuesday</td></tr>
+          <tr><td>18</td><td>Dr. Babasaheb Ambedkar Jayanti</td><td>14.04.2026</td><td>Tuesday</td></tr>
+          <tr><td>19</td><td>Vaishakhadi(Bengal)/Bohag Bihu(Assam)</td><td>15.04.2026</td><td>Wednesday</td></tr>
+          <tr><td>20</td><td>Akshaya Tritiya</td><td>19.04.2025</td><td>Sunday</td></tr>
+          <tr><td>21</td><td>Maharashtra Day</td><td>01.05.2026</td><td>Friday</td></tr>
+          <tr><td>22</td><td>Rabindranath Tagore Jayanti</td><td>08.05.2026</td><td>Friday</td></tr>
+          <tr><td>23</td><td>Vat Pournima</td><td>29.06.2026</td><td>Monday</td></tr>
+          <tr><td>24</td><td>Sant Tukaram Maharaj Palkhi Yatra First day</td><td>07.07.2026</td><td>Tuesday</td></tr>
+          <tr><td>25</td><td>Rath Yatra</td><td>16.07.2026</td><td>Thursday</td></tr>
+          <tr><td>26</td><td>Aashadhi Ekadashi</td><td>25.07.2026</td><td>Saturday</td></tr>
+          <tr><td>27</td><td>Guru Pournima</td><td>29.07.2026</td><td>Wednesday</td></tr>
+          <tr><td>28</td><td>Parsi New Year’s Day/Nowraj</td><td>15.08.2026</td><td>Saturday</td></tr>
+          <tr><td>29</td><td>Nag Panchami</td><td>17.08.2026</td><td>Monday</td></tr>
+          <tr><td>30</td><td>Onam/Thirunonam Day</td><td>26.08.2026</td><td>Wednesday</td></tr>
+          <tr><td>31</td><td>Raksha Bandhan</td><td>28.08.2026</td><td>Friday</td></tr>
+          <tr><td>32</td><td>Janmashtami (Smarta) / Shri Krishna Jayanti</td><td>04.09.2026</td><td>Friday</td></tr>
+          <tr><td>33</td><td>Gopalkala/ Dahihandi</td><td>05.09.2026</td><td>Saturday</td></tr>
+          <tr><td>34</td><td>Rosh Hashanah (Jew)</td><td>12.09.2026</td><td>Saturday</td></tr>
+          <tr><td>35</td><td>Yom Kippur (Jew)</td><td>21.09.2026</td><td>Monday</td></tr>
+          <tr><td>36</td><td>Anant Chaturdashi</td><td>25.09.2026</td><td>Friday</td></tr>
+          <tr><td>37</td><td>Sukkoth (Jew)</td><td>26.09.2026</td><td>Saturday</td></tr>
+          <tr><td>38</td><td>Simhat Torah (Jew)</td><td>04.10.2026</td><td>Sunday</td></tr>
+          <tr><td>39</td><td>Ghathsthapana, First Navaratra day</td><td>11.10.2026</td><td>Sunday</td></tr>
+          <tr><td>40</td><td>Dussehra (Saptami)</td><td>18.10.2026</td><td>Sunday</td></tr>
+          <tr><td>41</td><td>Dussehra (Maha Ashtami)/ Dussehra (Maha Navmi)</td><td>19.10.2026</td><td>Monday</td></tr>
+          <tr><td>42</td><td>An additional day for Dussehra</td><td>21.10.2026</td><td>Wednesday</td></tr>
+          <tr><td>43</td><td>Kojagiri Pournima</td><td>25.10.2026</td><td>Sunday</td></tr>
+          <tr><td>44</td><td>Maharishi Valmiki Jayanti</td><td>26.10.2026</td><td>Monday</td></tr>
+          <tr><td>45</td><td>Karaka Chaturthi (Karwa Chouth)</td><td>29.10.2026</td><td>Thursday</td></tr>
+          <tr><td>46</td><td>Dhantrayodashi</td><td>06.11.2026</td><td>Friday</td></tr>
+          <tr><td>47</td><td>Govardhan Puja</td><td>10.11.2026</td><td>Tuesday</td></tr>
+          <tr><td>48</td><td>Bhaidooj/ Balipratipada</td><td>11.11.2026</td><td>Wednesday</td></tr>
+          <tr><td>49</td><td>Pratihar Sasthi or Surya Sasthi (Chhat Puja)</td><td>15.11.2026</td><td>Sunday</td></tr>
+          <tr><td>50</td><td>Hanukkah (Jew)</td><td>05.12.2026</td><td>Saturday</td></tr>
+          <tr><td>51</td><td>Dr. Babasaheb Ambedkar Punyatithi</td><td>06.12.2026</td><td>Sunday</td></tr>
+          <tr><td>52</td><td>Shri Datta Jayanti</td><td>23.12.2026</td><td>Wednesday</td></tr>
+          <tr><td>53</td><td>Christmas Eve</td><td>24.12.2026</td><td>Thursday</td></tr>
+          <tr><td>54</td><td>Boxing Day</td><td>26.12.2026</td><td>Saturday</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="signature">(Vimal Bidwai)<br>Jt. Secretary, CGEWCC, Mumbai.</div>
+    <p class="page-label">2–3 | Page</p>
+  </section>
+</main>
+</body>
+</html>
